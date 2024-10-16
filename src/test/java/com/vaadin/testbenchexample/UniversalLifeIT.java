@@ -1,4 +1,5 @@
 package com.vaadin.testbenchexample;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -6,14 +7,21 @@ import java.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import com.vaadin.testbench.screenshot.ImageFileUtil;
 
+<<<<<<< HEAD:src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java
+public class UniversalLifeIT extends BaseLoginTest {
+/*
+=======
 public class AddNewBusinessSpiaIT extends BaseLoginTest {
+
 	/*
+>>>>>>> c7146accd917ae3f5fb813c340caa7f4179f5a3e:src/test/java/com/vaadin/testbenchexample/AddNewBusinessSpiaIT.java
 	@Test
 	public void addIllustration() throws InterruptedException {
 
@@ -70,18 +78,24 @@ public class AddNewBusinessSpiaIT extends BaseLoginTest {
 	}
 
 	@Test
-	public void addApplication2() throws IOException, InterruptedException {
+	public void addApplication2() throws Exception {
 
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		getSelectButton.getSelectItem().selectItemByIndex( 5 );
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Mouse" );
+		getFamily.searchByName().sendKeys( "Palmer" );
 		getFamily.searchButton().click();
-		getFamily.family().getCell( "Mouse" ).click();
+		getFamily.family().getCell( "Palmer" ).click();
 		ScenarioView getApplication = $( ScenarioView.class ).first();
-		getApplication.applicationNumber().getCell( "424000225" ).click();
+		getApplication.applicationNumber().getCell( "424000035" ).click();
+		NaviMenuView getDocument = $( NaviMenuView.class ).first();
+		getDocument.getDocument().click();
 		ApplicationView application = $( ApplicationView.class ).first();
-		application.applicationReceived().selectByText( "Yes" );
+		application.downloadButton().click();
+		Thread.sleep( 3_000 );
+		application.compareAndDeleteDownloadedPdf();
+
+	application.applicationReceived().selectByText( "Yes" );
 		Assertions.assertEquals( "Yes", application.applicationReceived().getSelectedText() );
 		application.applicationReceivedDate().setDate( LocalDate.now() );
 		application.applicationSignedDate().setDate( LocalDate.now() );
@@ -135,28 +149,51 @@ public class AddNewBusinessSpiaIT extends BaseLoginTest {
 		closeNote.closeButton().click();
 
 	}
-
+*/
 	@Test
-	public void addSuspenseSPIA() {VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
+	public void addSuspense() throws InterruptedException {
+		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
-		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Mouse" );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Mouse" ).click();
-		ScenarioView getApplication = $( ScenarioView.class ).first();
-		getApplication.applicationNumber().getCell( "424000224" ).click();
+		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
+		getPolicy.searchByPolicy().sendKeys( "001" );
+		getPolicy.searchButton().click();
+		getPolicy.family().getCell( "001" ).click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
 		addSuspense.suspense().click();
-		ApplicationView addSuspenseButton = $( ApplicationView.class ).first();
-		addSuspenseButton.addSuspense().click();
+		ScenarioView addSuspenseButton = $( ScenarioView.class ).first();
+		addSuspenseButton.addSuspenceButton().click();
 		EntryDialogContent suspenseSource = $( EntryDialogContent.class ).first();
 		suspenseSource.suspenseAmount().sendKeys( "100000" );
 		Assertions.assertEquals( "100000",suspenseSource.suspenseAmount().getValue() );
 		suspenseSource.suspenseSource().selectByText( "Check" );
 		Assertions.assertEquals( "Check",suspenseSource.suspenseSource().getSelectedText() );
+		suspenseSource.depositAccount().selectByText( "General Premium" );
 		suspenseSource.processButton().click();
-	}
+		ScenarioView checkSuspence=$(ScenarioView.class).first();
+//		Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
 
+		checkSuspence.transferSuspenceButton().click();
+		EntryDialogContent transferSuspence = $(EntryDialogContent.class).first();
+		transferSuspence.fromAccount().selectByText( "General Premium" );
+	//	EntryDialogContent transferSuspenceTo = $(EntryDialogContent.class).first();
+	//	transferSuspence.note().sendKeys( "123" );
+	//	transferSuspence.toAccount().focus();
+		transferSuspence.toAccount().selectByText( "Family" );
+		transferSuspence.searchFamily().sendKeys( "Palmer" );
+		transferSuspence.search().doubleClick();
+		transferSuspence.family().getCell( "Palmer" ).click();
+		transferSuspence.toAccount().selectByText( "General Premium" );
+		transferSuspence.transferAmount().sendKeys( "100000" );
+		Assertions.assertEquals( "100000",transferSuspence.transferAmount().getValue() );
+		transferSuspence.transferEffectveDate().setDate( LocalDate.now() );
+		transferSuspence.note().sendKeys( "transfer to David Palmer" );
+		transferSuspence.okButton().click();
+		ScenarioView suspenceAmount=$(ScenarioView.class).first();
+	//	Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
+
+
+	}
+/*
 	@Test
 	public void issuePolicySPIA() {
 
@@ -209,16 +246,20 @@ public class AddNewBusinessSpiaIT extends BaseLoginTest {
 
 	}
 
-	 */
+<<<<<<< HEAD:src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java
+
+=======
+*/
+>>>>>>> c7146accd917ae3f5fb813c340caa7f4179f5a3e:src/test/java/com/vaadin/testbenchexample/AddNewBusinessSpiaIT.java
 
 	@Test
-	public void addNewBusiness() throws InterruptedException, IOException {
+	public void addNewBusiness() throws Exception {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 5 );
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Carter" );
+		getFamily.searchByName().sendKeys( "Palmer" );
 		getFamily.searchButton().click();
-		getFamily.family().getCell( "Carter" ).click();
+		getFamily.family().getCell( "Palmer" ).click();
 		NaviMenuView newBusiness = $( NaviMenuView.class ).first();
 		newBusiness.getNewBusiness().click();
 		NewIllustrationView addNewBusiness = $( NewIllustrationView.class ).first();
@@ -237,14 +278,26 @@ public class AddNewBusinessSpiaIT extends BaseLoginTest {
 		illustration.federalTaxWithholdingPercentage().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "10" );
 		illustration.disbursementMethod().selectByText( "ACH Disbursement" );
 		illustration.getSaveButton().click();
+		Assertions.assertEquals( illustration.paymentStartDate().getDate(),illustration.policyEffectiveDate().getDate().plusMonths( 3 ) );
 		NaviMenuView getReport = $( NaviMenuView.class ).first();
 		getReport.getReport().click();
 		IllustrationView apply = $( IllustrationView.class ).first();
 		apply.getApplyButtonReport().click();
 		VaadinConfirmDialogView confirm = $( VaadinConfirmDialogView.class ).first();
 		confirm.getSaveButton().click();
+
+        NaviMenuView getDocument = $( NaviMenuView.class ).first();
+		getDocument.getDocument().click();
 		ApplicationView application = $( ApplicationView.class ).first();
-		application.applicationReceived().selectByText( "Yes" );
+		application.downloadButton().click();
+		Thread.sleep( 3_000 );
+		application.compareAndDeleteDownloadedPdfSPIA();
+
+		NaviMenuView getApplication = $( NaviMenuView.class ).first();
+		getApplication.getApplication().click();
+		ApplicationView app = $( ApplicationView.class ).first();
+
+		app.applicationReceived().selectByText( "Yes" );
 		Assertions.assertEquals( "Yes", application.applicationReceived().getSelectedText() );
 		application.applicationReceivedDate().setDate( LocalDate.now() );
 		application.applicationSignedDate().setDate( LocalDate.now() );
@@ -263,19 +316,19 @@ public class AddNewBusinessSpiaIT extends BaseLoginTest {
 		addNote.expiresDate().setDate( LocalDate.of( 2024, 12, 12 ) );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Annuity Owner Questionnaire" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Annuity Questionnare.pdf" ) );
 		Thread.sleep( 3_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Final Application" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Final Application.pdf") );
 		Thread.sleep( 3_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Sales Representative Disclosure" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Sales Representative.pdf" ) );
 		Thread.sleep( 3_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Final Illustration" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Final Illustration .pdf" ) );
 		addNote.okButton().click();
 		addNote.closeButton().click();
 		NaviMenuView iGO = $( NaviMenuView.class ).first();
@@ -316,9 +369,15 @@ public class AddNewBusinessSpiaIT extends BaseLoginTest {
 
 
 	}
+<<<<<<< HEAD:src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java
+*/
 
-
+=======
+>>>>>>> c7146accd917ae3f5fb813c340caa7f4179f5a3e:src/test/java/com/vaadin/testbenchexample/AddNewBusinessSpiaIT.java
 }
+
+
+
 
 
 

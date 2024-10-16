@@ -9,11 +9,21 @@ import com.vaadin.testbench.elementsbase.Element;
 @Element( "search-component" )
 public class SearchComponentView extends TestBenchElement {
 
+	protected TextFieldElement searchBySSN() {
+
+		return $( TestBenchElement.class ).id( "Search" ).$( TextFieldElement.class ).id( "TaxID" );
+
+	}
 	protected TextFieldElement searchByName() {
 
 		return $( TestBenchElement.class ).id( "Search" ).$( TextFieldElement.class ).id( "LastName" );
 
 	}
+
+	protected TextFieldElement searchByPolicy(){
+		return $( TestBenchElement.class ).id( "Search" ).$( TextFieldElement.class ).id( "PolicyNumber" );
+	}
+
 	protected ButtonElement searchButton (){
 		return $(ButtonElement.class).first();
 	}

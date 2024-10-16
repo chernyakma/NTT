@@ -201,7 +201,7 @@ public class AddNewBusinessFpraIT extends BaseLoginTest {
 				undoButton.getSaveButton().click();
 
 			}
-*/
+
 
 	@Test
 	public void addNewBusiness() throws InterruptedException {
@@ -209,9 +209,9 @@ public class AddNewBusinessFpraIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 5 );
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Carter" );
+		getFamily.searchByName().sendKeys( "Palmer" );
 		getFamily.searchButton().click();
-		getFamily.family().getCell( "Carter" ).click();
+		getFamily.family().getCell( "Palmer" ).click();
 		NaviMenuView newBusiness = $( NaviMenuView.class ).first();
 		newBusiness.getNewBusiness().click();
 		NewIllustrationView addNewBusiness = $( NewIllustrationView.class ).first();
@@ -248,15 +248,19 @@ public class AddNewBusinessFpraIT extends BaseLoginTest {
 		addNote.expiresDate().setDate( LocalDate.of( 2024, 12, 12 ) );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Annuity Owner Questionnaire" );
+<<<<<<< HEAD
 		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
+=======
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Annuity Questionnare.pdf" ) );
+>>>>>>> c7146accd917ae3f5fb813c340caa7f4179f5a3e
+		Thread.sleep( 5_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Final Application" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Final Application.pdf" ) );
+		Thread.sleep( 5_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Sales Representative Disclosure" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Sales Representative.pdf" ) );
 		addNote.okButton().click();
 		addNote.closeButton().click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
@@ -290,7 +294,7 @@ public class AddNewBusinessFpraIT extends BaseLoginTest {
 
 	}
 
-
+*/
 }
 
 

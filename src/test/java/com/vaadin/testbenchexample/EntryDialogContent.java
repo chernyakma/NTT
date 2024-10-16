@@ -1,6 +1,10 @@
 package com.vaadin.testbenchexample;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+
 import com.vaadin.flow.component.button.testbench.ButtonElement;
 import com.vaadin.flow.component.datepicker.testbench.DatePickerElement;
+import com.vaadin.flow.component.grid.testbench.GridElement;
 import com.vaadin.flow.component.select.testbench.SelectElement;
 import com.vaadin.flow.component.textfield.testbench.TextAreaElement;
 import com.vaadin.flow.component.textfield.testbench.TextFieldElement;
@@ -16,19 +20,19 @@ public class EntryDialogContent extends TestBenchElement {
 		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "FinancialInstitutionName" );
 
 	}
-	protected TextFieldElement getAccountFirstName() {
+	protected TextFieldElement getBankCity() {
 
-		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "AccountFirstName" );
+		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "BankCity" );
 
 }
-	protected TextFieldElement getAccountLastName() {
+	protected SelectElement getBankState() {
 
-		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "AccountLastName" );
+		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( SelectElement.class ).id( "BankState" );
 
 	}
 	protected TextFieldElement getAccountNumber() {
 
-		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "AccountNumber" );
+		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "AccountNumberUnmasked" );
 
 	}
 	protected TextFieldElement getRoutingNumber() {
@@ -74,6 +78,8 @@ public class EntryDialogContent extends TestBenchElement {
 	protected SelectElement suspenseSource(){
 		return $(TestBenchElement.class).id( "mainContent" ).$(SelectElement.class).first();
 	}
+
+
 	protected SelectElement depositAccount(){
 		return $(TestBenchElement.class).id( "mainContent" ).$(SelectElement.class).last();
 	}
@@ -83,12 +89,58 @@ public class EntryDialogContent extends TestBenchElement {
 	protected DatePickerElement effectveDate() {
 		return $(TestBenchElement.class).id( "mainContent" ).$(DatePickerElement.class).first();
 	}
-	public void addAccount(String bankName,String firstName,String lastName,String accountNumber,String routingNumber ){
+
+	protected SelectElement fromAccount () {
+
+		return $( TestBenchElement.class ).id( "mainContent" ).$( "transfer-suspense-component" ).first().$( TestBenchElement.class ).id( "fromContent" ).$( "select-transfer-financial-account-component" ).first().$( SelectElement.class ).first();
+	}
+		protected SelectElement toAccount (){
+		return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "toContent" ).$("select-transfer-financial-account-component").first().$(SelectElement.class).first();
+
+		}
+		protected TextFieldElement searchFamily (){
+			return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "toContent" ).$("select-transfer-financial-account-component").first().$(TestBenchElement.class).id( "searchContent" ).$(TextFieldElement.class).first();
+		}
+
+	protected GridElement family(){
+		return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "toContent" ).$("select-transfer-financial-account-component").first().$(TestBenchElement.class).id( "searchContent" ).$("search-component").first().$(GridElement.class).first();
+	}
+
+	    protected ButtonElement search (){
+			return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "toContent" ).$("select-transfer-financial-account-component").first().$(TestBenchElement.class).id( "searchContent" ).$(ButtonElement.class).last();
+		}
+		protected TextAreaElement note (){
+			return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "inputContent" ).$(TextAreaElement.class).first();
+		}
+		protected TextFieldElement transferAmount(){
+			return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "inputContent" ).$(TextFieldElement.class).first();
+		}
+	protected DatePickerElement transferEffectveDate(){
+		return $(TestBenchElement.class).id( "mainContent" ).$("transfer-suspense-component").first().$(TestBenchElement.class).id( "inputContent").$(DatePickerElement.class).first();
+	}
+
+	    protected TextFieldElement loanAmount (){
+			return $(TestBenchElement.class).id( "InputsSection" ).$( TextFieldElement.class).id( "AmountRequested" );
+		}
+	protected TextFieldElement disbursedAmount (){
+		return $(TestBenchElement.class).id( "InputsSection" ).$( TextFieldElement.class).id( "AmountDisbursed" );
+	}
+	protected SelectElement disbursementMethod (){
+		return $(TestBenchElement.class).id( "InputsSection" ).$( SelectElement.class).id( "DisbursementMethod" );
+	}
+	protected SelectElement coverageName (){
+		return $(TestBenchElement.class).id( "BenefitsChangeSection" ).$( SelectElement.class).id( "CoverageProductCodeBeingUpdated" );
+	}
+	protected TextFieldElement faceAmount(){
+		return $ (TestBenchElement.class).id( "BenefitsChangeSection" ).$( TextFieldElement.class).id( "FaceAmount" );
+	}
+
+
+		public void addAccount(String bankName,String city,String routingNumber,String accountNumber ){
 		getFinancialInstitutionName().sendKeys( bankName );
-		getAccountFirstName().sendKeys( firstName );
-		getAccountLastName().sendKeys( lastName );
-		getAccountNumber().sendKeys( accountNumber );
+		getBankCity().sendKeys( city );
 		getRoutingNumber().sendKeys( routingNumber );
+		getAccountNumber().sendKeys( accountNumber );
 
 	}
 

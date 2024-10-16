@@ -54,8 +54,8 @@ import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 	protected TextFieldElement getLastName() {
 		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( TextFieldElement.class ).id( "LastName" );
 	}
-	protected TextFieldElement getSuffix() {
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( TextFieldElement.class ).id( "Suffix" );
+	protected SelectElement getSuffix() {
+		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "SuffixCode" );
 	}
 	protected TextFieldElement getMiddleName() {
 		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( TextFieldElement.class ).id( "MiddleName" );
@@ -76,33 +76,23 @@ import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 	protected RadioButtonGroupElement getNonTobacco () {
 		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( RadioButtonGroupElement.class ).first();
 	}
-	protected RadioButtonGroupElement getTobaccoUse () {
-
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( RadioButtonGroupElement.class ).last();
+	protected RadioButtonGroupElement getTobaccoUse () {return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( RadioButtonGroupElement.class ).last();
+	}
+	protected SelectElement getMarriageStatus() {
+		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "MarriageStatus" );
+	}
+	protected SelectElement getHealthStatus() {
+		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "PerceptionOfHealth" );
 	}
 	protected SelectElement getRelationship() {
 		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "S0" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "RelationshipType" );
 	}
 
-	//Military
-	protected SelectElement getMilitaryStatus() {
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Military" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "UsMilitaryStatus" );
+	//Employee
+	protected SelectElement getFullTimePartTime() {
+		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Employee" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "FullTimePartTime" );
 	}
-	protected SelectElement getMilitaryBranch() {
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Military" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "UsMilitaryBranch" );
-	}
-	protected SelectElement getMilitaryRank() {
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Military" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "UsMilitaryRank" );
-	}
-	protected SelectElement getMilitaryMemberStatus() {
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Military" ).$( FormLayoutElement.class ).first().$( SelectElement.class ).id( "UsMilitaryMemberType" );
-	}
-	protected  CheckboxElement getVipStatus(){
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Military" ).$( FormLayoutElement.class ).first().$(CheckboxElement.class).first();
-	}
-	protected  CheckboxElement getVaultDocuments(){
-		return $( TestBenchElement.class ).id( "scenarioComponent" ).$( TestBenchElement.class ).id( "Military" ).$( FormLayoutElement.class ).first().$(CheckboxElement.class).last();
-	}
+
 
 
 	//Contact
@@ -168,23 +158,21 @@ import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 
 	public void addFamily( ) {
 
-		List<String[]> testData = ExcelUtils.readExcelData( "C:\\Users\\MariiaCherniak\\Documents\\testData.xlsx" );
+		List<String[]> testData = ExcelUtils.readExcelData( "C:\\Users\\MariiaCherniak\\Documents\\NTTestdata.xlsx" );
 		for( String[] dataRow : testData ) {
 			String firstName = dataRow[0];
 			String lastName = dataRow[1];
 			String middleName = dataRow[2];
-			String suffix = dataRow[3];
-			String taxID = dataRow[4];
-			String email = dataRow[5];
-			String email2 = dataRow[6];
-			String phone1 = dataRow[7];
-			String phone2 = dataRow[8];
-			String extens1 = dataRow[9];
-			String extens2 = dataRow[10];
+			String taxID = dataRow[3];
+			String email = dataRow[4];
+			String email2 = dataRow[5];
+			String phone1 = dataRow[6];
+			String phone2 = dataRow[7];
+			String extens1 = dataRow[8];
+			String extens2 = dataRow[9];
 			getLastName().sendKeys( lastName );
 			getFirstName().sendKeys( firstName );
 			getMiddleName().setValue( middleName );
-			getSuffix().sendKeys( suffix );
 			getTaxID().setValue( taxID );
 			getEmail().sendKeys( email );
 			getEmail2().sendKeys( email2 );
@@ -193,10 +181,7 @@ import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 			getPhone2().sendKeys( phone2 );
 			getPhone2Extension().sendKeys( extens2 );
 
-			//	waitUntil( ExpectedConditions.textToBePresentInElement( getFirstName(),"Harry"));
-			//	getSaveButton().click();
 
-			//
 		}
 
 
@@ -204,24 +189,21 @@ import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 
 	public void addSpouse( ) {
 
-		List<String[]> testData = ExcelUtils.readExcelData( "C:\\Users\\MariiaCherniak\\Documents\\TestSpouseData.xlsx" );
+		List<String[]> testData = ExcelUtils.readExcelData( "C:\\Users\\MariiaCherniak\\Documents\\NTTSpouseTestData.xlsx" );
 		for( String[] dataRow : testData ) {
 			String firstName = dataRow[0];
 			String lastName = dataRow[1];
 			String middleName = dataRow[2];
-			String suffix = dataRow[3];
-			String taxID = dataRow[4];
-			String email = dataRow[5];
-			String email2 = dataRow[6];
-			String phone1 = dataRow[7];
-			String phone2 = dataRow[8];
-			String extens1 = dataRow[9];
-			String extens2 = dataRow[10];
-
+			String taxID = dataRow[3];
+			String email = dataRow[4];
+			String email2 = dataRow[5];
+			String phone1 = dataRow[6];
+			String phone2 = dataRow[7];
+			String extens1 = dataRow[8];
+			String extens2 = dataRow[9];
 			getLastName().sendKeys( lastName );
 			getFirstName().sendKeys( firstName );
 			getMiddleName().setValue( middleName );
-			getSuffix().sendKeys( suffix );
 			getTaxID().setValue( taxID );
 			getEmail().sendKeys( email );
 			getEmail2().sendKeys( email2 );
@@ -230,10 +212,7 @@ import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 			getPhone2().sendKeys( phone2 );
 			getPhone2Extension().sendKeys( extens2 );
 
-			//	waitUntil( ExpectedConditions.textToBePresentInElement( getFirstName(),"Harry"));
-			//	getSaveButton().click();
 
-			//
 		}
 
 	}

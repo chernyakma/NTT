@@ -231,15 +231,15 @@ public class AddNewBusinessSpdaIT extends BaseLoginTest {
 	}
 
 
- */
+
 	@Test
-	public void addNewBusiness() throws InterruptedException {
+	public void addNewBusiness() throws Exception {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 5 );
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Carter" );
+		getFamily.searchByName().sendKeys( "Palmer" );
 		getFamily.searchButton().click();
-		getFamily.family().getCell( "Carter" ).click();
+		getFamily.family().getCell( "Palmer" ).click();
 		NaviMenuView newBusiness = $( NaviMenuView.class ).first();
 		newBusiness.getNewBusiness().click();
 		NewIllustrationView addNewBusiness = $( NewIllustrationView.class ).first();
@@ -261,7 +261,17 @@ public class AddNewBusinessSpdaIT extends BaseLoginTest {
 		apply.getApplyButtonResult().click();
 		VaadinConfirmDialogView confirm = $( VaadinConfirmDialogView.class ).first();
 		confirm.getSaveButton().click();
+
+		NaviMenuView getDocument = $( NaviMenuView.class ).first();
+		getDocument.getDocumentSPDA().click();
 		ApplicationView application = $( ApplicationView.class ).first();
+		application.downloadButton().click();
+		Thread.sleep( 3_000 );
+		application.compareAndDeleteDownloadedPdfSPDA();
+
+		NaviMenuView getApplication = $( NaviMenuView.class ).first();
+		getApplication.getApplication().click();
+		ApplicationView app = $( ApplicationView.class ).first();
 		application.applicationReceived().selectByText( "Yes" );
 		Assertions.assertEquals( "Yes", application.applicationReceived().getSelectedText() );
 		application.applicationReceivedDate().setDate( LocalDate.now() );
@@ -281,15 +291,15 @@ public class AddNewBusinessSpdaIT extends BaseLoginTest {
 		addNote.expiresDate().setDate( LocalDate.of( 2024, 12, 12 ) );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Annuity Owner Questionnaire" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Annuity Questionnare.pdf" ) );
 		Thread.sleep( 3_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Final Application" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Final Application.pdf" ) );
 		Thread.sleep( 3_000 );
 		addNote.attachButton().click();
 		addNote.attachmentType().selectByText( "Sales Representative Disclosure" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
+		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Downloads\\Sales Representative.pdf" ) );
 		Thread.sleep( 3_000 );
 		addNote.attachButton().click();
 		addNote.okButton().click();
@@ -327,5 +337,5 @@ public class AddNewBusinessSpdaIT extends BaseLoginTest {
 
 	}
 
-
+*/
 }
