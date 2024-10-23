@@ -88,14 +88,15 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	// Your login method
 
 	private void performLogin() {
-		getDriver().get("http://localhost:8080/everlake_webui_war/");
+	//	getDriver().get("http://localhost:8080/everlake_webui_war/");
 	//	getDriver().get( "http://" + IPAddress.findSiteLocalAddress() + ":8080/navy_webui/");
 
 
-		$( TextFieldElement.class).first().setValue( "jBond");
-		$( PasswordFieldElement.class).first().setValue( "JBond007");
-		$( ButtonElement.class).first().click();
-	/*	getDriver().get("https://test.navymutual.calcfocus.net/policyadmin/oauth2/login/cognito");
+	//	$( TextFieldElement.class).first().setValue( "jBond");
+	//	$( PasswordFieldElement.class).first().setValue( "JBond007");
+	//	$( ButtonElement.class).first().click();
+		getDriver().get("https://test.everlake.calcfocus.net/achieve/oauth2/login/code/cognito");
+
 		WebElement usernameFieldElement = findElement( By.id( "signInFormUsername" ));
 		usernameFieldElement.click();
 		usernameFieldElement.sendKeys( "helpdesk" );
@@ -106,7 +107,7 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	//	WebElement buttonElement = findElement( By.id( "signInSubmitButton" ));
 		TestBenchElement loginButton = ( TestBenchElement )findElement( By.name( "signInSubmitButton" ));
 		loginButton.click();
-*/
+
 
 
 

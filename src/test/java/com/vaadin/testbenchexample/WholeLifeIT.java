@@ -19,9 +19,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1043190" );
+		getPolicy.searchByPolicy().sendKeys( "05W1001538" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1043190" ).click();
+		getPolicy.family().getCell( "05W1001538" ).click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
 		addSuspense.suspense().click();
 		ScenarioView addSuspenseButton = $( ScenarioView.class ).first();
@@ -63,9 +63,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1E00069" );
+		getPolicy.searchByPolicy().sendKeys( "05W1E09080" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1E00069" ).click();
+		getPolicy.family().getCell( "05W1E09080" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
 		transaction.transactionsWL().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
@@ -74,9 +74,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		TransactionPopUpPageView selectTransaction = $(TransactionPopUpPageView.class).first();
 		selectTransaction.transactionType().selectByText( "Loan" );
 		EntryDialogContent loan = $(EntryDialogContent.class).first();
-		loan.loanAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "2000" );
+		loan.loanAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "1000" );
 		loan.disbursementMethod().selectByText( "Check Disbursement" );
-		Assertions.assertEquals( "2,000.00",loan.loanAmount().getValue() );
+		Assertions.assertEquals( "1,000.00",loan.loanAmount().getValue() );
 		loan.okButton().click();
 		ScenarioView processLoanTransaction = $(ScenarioView.class).first();
 		processLoanTransaction.processInitialPremiumTransactionButton().click();
@@ -87,13 +87,13 @@ public class WholeLifeIT extends BaseLoginTest {
         transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
-			"Screenshot 2024-05-31 165765.png" ) ) );
+			"Screenshot 2024-05-31 165801.png" ) ) );
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
 		NaviMenuView policy = $(NaviMenuView.class).first();
 		policy.getPolicy().click();
 		ScenarioView policyPage = $(ScenarioView.class).first();
-		Assertions.assertEquals( "2,000.00",policyPage.loanBalance().getValue() );
+		Assertions.assertEquals( "1,000.00",policyPage.loanBalance().getValue() );
 		NaviMenuView transactions = $(NaviMenuView.class).first();
 		transactions.transactionsWL().click();
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
@@ -113,9 +113,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1000304" );
+		getPolicy.searchByPolicy().sendKeys( "05W1016119" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1000304" ).click();
+		getPolicy.family().getCell( "05W1016119" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
 		transaction.transactionsWL().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
@@ -126,6 +126,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		EntryDialogContent addRider = $(EntryDialogContent.class).first();
 		addRider.coverageName().selectItemByIndex( 0);
 		addRider.faceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "5000" );
+		Assertions.assertEquals("5000",addRider.faceAmount().getValue());
 		TransactionPopUpPageView notes = $(TransactionPopUpPageView.class).first();
 		notes.note().sendKeys( "123" );
 		addRider.okButton().click();
@@ -134,6 +135,18 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
 		confirm.getSaveButton().click();
 		Thread.sleep( 15_000 );
+		ScenarioView getModalPremium = $(ScenarioView.class).first();
+		Assertions.assertEquals( "$105.18",getModalPremium.modalPremium().getText() );
+
+		ScenarioView transactionsPage = $(ScenarioView.class).first();
+		transactionsPage.viewLoanTransactionButton().click();
+		Thread.sleep( 5_000 );
+		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
+				"Screenshot 2024-05-31 165802.png" ) ) );
+//		Assertions.assertEquals("Actual",processTransaction.transactionStatus().getText());
+		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
+		transactionPage.cancel().click();
+
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseAddRiderTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
@@ -144,225 +157,6 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
 		confirmation.getSaveButton().click();
 
-
-	}
-	/*
-	@Test
-	public void addIllustration() throws InterruptedException, IOException {
-
-		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 5 );
-		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Carter" );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Carter" ).click();
-		NaviMenuView newBusiness = $( NaviMenuView.class ).first();
-		newBusiness.getNewBusiness().click();
-		NewIllustrationView addNewBusiness = $( NewIllustrationView.class ).first();
-		addNewBusiness.getProductType().selectByText( "Whole Life" );
-		addNewBusiness.getFaceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "50000" );
-		addNewBusiness.getProduct().selectByText( "Flagship Single Pay Whole Life 2020" );
-		Assertions.assertEquals( "50,000", addNewBusiness.getFaceAmount().getValue() );
-		Assertions.assertEquals( "Flagship Single Pay Whole Life 2020", addNewBusiness.getProduct().getSelectedText() );
-		addNewBusiness.getOkButton().click();
-		IllustrationView illustration = $( IllustrationView.class ).first();
-		illustration.getSaveButton().click();
-		NaviMenuView apply = $( NaviMenuView.class ).first();
-		apply.getReport().click();
-		IllustrationView getApply = $( IllustrationView.class ).first();
-		//	getApply.getSaveButtonResult().click();
-		getApply.getApplyButtonWL().click();
-		VaadinConfirmDialogView confirm = $( VaadinConfirmDialogView.class ).first();
-		confirm.getSaveButton().click();
-		ApplicationView application = $( ApplicationView.class ).first();
-		application.getAgentNumber().openPopup();
-		application.getAgentNumber().sendKeys( Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN );
-		application.getAgentNumber().sendKeys( Keys.ENTER );
-		Assertions.assertEquals( "NM001 - Navy Mutual Default Agent", application.getAgentNumber().getSelectedText() );
-		application.applicationReceived().selectByText( "Yes" );
-		Assertions.assertEquals( "Yes", application.applicationReceived().getSelectedText() );
-		application.applicationReceivedDate().setDate( LocalDate.now() );
-		application.applicationSignedDate().setDate( LocalDate.now() );
-		application.applicationFundsReceived().selectByText( "Yes" );
-		Assertions.assertEquals( "Yes", application.applicationFundsReceived().getSelectedText() );
-		application.cashWithApplication().selectByText( "Yes" );
-		Assertions.assertEquals( "Yes", application.cashWithApplication().getSelectedText() );
-		application.cashWithApplicationReceivedDate().setDate( LocalDate.now() );
-		application.addRundomCaseNumber();
-		application.saveButton().click();
-
-	}
-		@Test
-		public void uploadDocs() throws IOException, InterruptedException {
-		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 5 );
-		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Carter" );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Carter" ).click();
-		ScenarioView getApplication = $( ScenarioView.class ).first();
-		getApplication.applicationNumber().getCell( "3686931" ).click();
-		ApplicationView application = $( ApplicationView.class ).first();
-		application.threeDotsButton().click();
-		WebElement noteList = findElement( By.xpath( "//*[@class='vaadin-menu-item']" ) );
-		noteList.click();
-		Thread.sleep( 3_000 );
-		EntryDialogContent addNote = $( EntryDialogContent.class ).first();
-		addNote.addNoteButton().click();
-		addNote.noteText().setValue( "document 1" );
-		addNote.expiresDate().setDate( LocalDate.of( 2024, 12, 12 ) );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Annuity Owner Questionnaire" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Final Application" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Sales Representative Disclosure" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Final Illustration" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		addNote.okButton().click();
-		addNote.closeButton().click();
-		NaviMenuView iGO = $( NaviMenuView.class ).first();
-		iGO.checkSpdaIGO().click();
-		Thread.sleep( 3_000 );
-		ApplicationView getIssueButton = $( ApplicationView.class ).first();
-		Assertions.assertTrue( getIssueButton.issueButton().isDisplayed() );
-		getIssueButton.issueButton().click();
-		VaadinConfirmDialogView confirmButton = $( VaadinConfirmDialogView.class ).first();
-		confirmButton.getSaveButton().click();
-
-
-
-
-	}
-	@Test
-	public void activatePolicy() throws InterruptedException, IOException {
-
-		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 5 );
-		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Carter" );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Carter" ).click();
-		ScenarioView getPolicy = $( ScenarioView.class ).first();
-		getPolicy.policyNumber().getCell( "3686931" ).click();
-		ScenarioView getPolicyStatus = $(ScenarioView.class).first();
-		Assertions.assertEquals( "Pending",getPolicyStatus.policyStatus().getText() );
-		NaviMenuView getTransactions = $( NaviMenuView.class ).first();
-		getTransactions.transactionsWL().click();
-		ScenarioView transaction = $( ScenarioView.class ).first();
-		transaction.processActivateTransactionButton().click();
-		VaadinConfirmDialogView confirmButton = $( VaadinConfirmDialogView.class ).first();
-		confirmButton.getSaveButton().click();
-		Thread.sleep( 10_000 );
-		transaction.processInitialPremiumTransactionButton().click();
-		VaadinConfirmDialogView okButton = $( VaadinConfirmDialogView.class ).first();
-		okButton.getSaveButton().click();
-		//	ScenarioView getPolicyStatus = $(ScenarioView.class).first();
-		Assertions.assertEquals( "Active",getPolicyStatus.policyStatus().getText() );
-		Thread.sleep( 5_000 );
-		transaction.reverseActivateTransactionButtonSPIA().click();
-		VaadinConfirmDialogView undoButton = $( VaadinConfirmDialogView.class ).first();
-		undoButton.getSaveButton().click();
-
-	}
-*/
-	@Test
-	public void addNewBusinessWL()throws InterruptedException, IOException {
-		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 5 );
-		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchByName().sendKeys( "Palmer" );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Palmer" ).click();
-		NaviMenuView newBusiness = $( NaviMenuView.class ).first();
-		newBusiness.getNewBusiness().click();
-		NewIllustrationView addNewBusiness = $( NewIllustrationView.class ).first();
-		addNewBusiness.getProductType().selectByText( "Whole Life" );
-		addNewBusiness.getFaceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "50000" );
-		addNewBusiness.getProduct().selectByText( "Flagship Single Pay Whole Life 2020" );
-		Assertions.assertEquals( "50,000", addNewBusiness.getFaceAmount().getValue() );
-		Assertions.assertEquals( "Flagship Single Pay Whole Life 2020", addNewBusiness.getProduct().getSelectedText() );
-		addNewBusiness.getOkButton().click();
-		IllustrationView illustration = $( IllustrationView.class ).first();
-		illustration.getSaveButton().click();
-		NaviMenuView apply = $( NaviMenuView.class ).first();
-		apply.getReport().click();
-		IllustrationView getApply = $( IllustrationView.class ).first();
-		//	getApply.getSaveButtonResult().click();
-		getApply.getApplyButtonWL().click();
-		VaadinConfirmDialogView confirm = $( VaadinConfirmDialogView.class ).first();
-		confirm.getSaveButton().click();
-		ApplicationView application = $( ApplicationView.class ).first();
-		application.getAgentNumber().openPopup();
-		application.getAgentNumber().sendKeys( Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN );
-		application.getAgentNumber().sendKeys( Keys.ENTER );
-		Assertions.assertEquals( "NM001 - Navy Mutual Default Agent", application.getAgentNumber().getSelectedText() );
-		application.applicationReceived().selectByText( "Yes" );
-		Assertions.assertEquals( "Yes", application.applicationReceived().getSelectedText() );
-		application.applicationReceivedDate().setDate( LocalDate.now() );
-		application.applicationSignedDate().setDate( LocalDate.now() );
-		application.applicationFundsReceived().selectByText( "Yes" );
-		Assertions.assertEquals( "Yes", application.applicationFundsReceived().getSelectedText() );
-		application.cashWithApplication().selectByText( "Yes" );
-		Assertions.assertEquals( "Yes", application.cashWithApplication().getSelectedText() );
-		application.cashWithApplicationReceivedDate().setDate( LocalDate.now() );
-		application.addRundomCaseNumber();
-		application.saveButton().click();
-		ApplicationView note = $( ApplicationView.class ).first();
-		note.threeDotsButton().click();
-		WebElement noteList = findElement( By.xpath( "//*[@class='vaadin-menu-item']" ) );
-		noteList.click();
-		Thread.sleep( 3_000 );
-		EntryDialogContent addNote = $( EntryDialogContent.class ).first();
-		addNote.addNoteButton().click();
-		addNote.noteText().setValue( "document 1" );
-		addNote.expiresDate().setDate( LocalDate.of( 2024, 12, 12 ) );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Annuity Owner Questionnaire" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Final Application" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Sales Representative Disclosure" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		Thread.sleep( 3_000 );
-		addNote.attachButton().click();
-		addNote.attachmentType().selectByText( "Final Illustration" );
-		addNote.uploadFileButton().upload( new File( "C:\\Users\\MariiaCherniak\\Documents\\correspondence_CondolenceLetterDeferredAnnuity_20240524172728195.pdf" ) );
-		addNote.okButton().click();
-		addNote.closeButton().click();
-		NaviMenuView iGO = $( NaviMenuView.class ).first();
-		iGO.checkSpdaIGO().click();
-		Thread.sleep( 3_000 );
-		ApplicationView getIssueButton = $( ApplicationView.class ).first();
-		Assertions.assertTrue( getIssueButton.issueButton().isDisplayed() );
-		getIssueButton.issueButton().click();
-		VaadinConfirmDialogView confirmButton = $( VaadinConfirmDialogView.class ).first();
-		confirmButton.getSaveButton().click();
-		ScenarioView getPolicyStatus = $(ScenarioView.class).first();
-		Assertions.assertEquals( "Pending",getPolicyStatus.policyStatus().getText() );
-		NaviMenuView getTransactions = $( NaviMenuView.class ).first();
-		getTransactions.transactionsWL().click();
-		ScenarioView transaction = $( ScenarioView.class ).first();
-		transaction.processActivateTransactionButton().click();
-		VaadinConfirmDialogView getConfirm = $( VaadinConfirmDialogView.class ).first();
-		getConfirm.getSaveButton().click();
-		Thread.sleep( 10_000 );
-		transaction.processInitialPremiumTransactionButton().click();
-		VaadinConfirmDialogView okButton = $( VaadinConfirmDialogView.class ).first();
-		okButton.getSaveButton().click();
-		//	ScenarioView getPolicyStatus = $(ScenarioView.class).first();
-		Assertions.assertEquals( "Active",getPolicyStatus.policyStatus().getText() );
 
 	}
 

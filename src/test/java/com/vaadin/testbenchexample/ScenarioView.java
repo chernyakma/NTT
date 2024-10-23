@@ -1,4 +1,6 @@
 package com.vaadin.testbenchexample;
+import com.vaadin.flow.component.grid.CellFocusEvent;
+import com.vaadin.flow.component.tabs.testbench.TabElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.w3c.dom.html.HTMLTableSectionElement;
@@ -43,11 +45,9 @@ public class ScenarioView extends TestBenchElement {
 
 	protected ButtonElement getDeleteSpouseButton() {
 
-<<<<<<< HEAD
+
 		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "family-member-page" ).first().$( TestBenchElement.class ).id( "Members" ).$( TestBenchElement.class ).id( "section" ).$( "search-component" ).first().$( ButtonElement.class ).get( 3 );
-=======
-		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "family-member-page" ).first().$( TestBenchElement.class ).id( "Members" ).$( TestBenchElement.class ).id( "section" ).$( "search-component" ).first().$( ButtonElement.class ).get( 8 );
->>>>>>> c7146accd917ae3f5fb813c340caa7f4179f5a3e
+
 	}
 
 	protected ButtonElement getDeleteButton() {
@@ -99,7 +99,7 @@ public class ScenarioView extends TestBenchElement {
 
 
 	protected ButtonElement reverseLoanTransactionButton(){
-		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "transactions-view-page" ).first().$( TestBenchElement.class ).id( "content" ).$( "search-component" ).first().$( ButtonElement.class ).get( 3 );
+		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "transactions-view-page" ).first().$( TestBenchElement.class ).id( "content" ).$( "search-component" ).first().$( ButtonElement.class ).get( 1 );
 	}
 
 	protected ButtonElement reverseAddRiderTransactionButton(){
@@ -109,8 +109,9 @@ public class ScenarioView extends TestBenchElement {
 		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "transactions-view-page" ).first().$( TestBenchElement.class ).id( "content" ).$( "search-component" ).first().$( ButtonElement.class ).get( 2 );
 	}
 
-protected WebElement policyStatus() { return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "titleLayout").$( TestBenchElement.class).id( "summaryTable").$( TestBenchElement.class).id( "componentContent" ).findElements( By.className( "summary-column-value" )).get( 3 );}
+	protected WebElement policyStatus() { return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "titleLayout").$( TestBenchElement.class).id( "summaryTable").$( TestBenchElement.class).id( "componentContent" ).findElements( By.className( "summary-column-value" )).get( 3 );}
 
+	protected WebElement modalPremium() { return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "titleLayout").$( TestBenchElement.class).id( "summaryTable").$( TestBenchElement.class).id( "componentContent" ).findElements( By.className( "summary-column-value" )).get( 7 );}
 	protected ButtonElement addSuspenceButton(){
 		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "suspense-page").first().$(ButtonElement.class).first();}
 	protected TestBenchElement suspenceBalance(){
@@ -124,7 +125,12 @@ protected WebElement policyStatus() { return $( TestBenchElement.class ).id( "vi
 
 	protected TextFieldElement loanBalance (){
 		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$(TestBenchElement.class).id( "ValuesSection" ).$(TextFieldElement.class).id( "LoanBalance" );}
-
+	protected GridElement cltrCoverage (){
+		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( TestBenchElement.class ).id( "CoveragesSection" ).$(TestBenchElement.class).id( "Coverages" ).$(TestBenchElement.class).id("componentContent").$(TestBenchElement.class).id("grid").$(GridElement.class).hasAttribute("vertical-borders").first();
+	}
+	protected TestBenchElement transactionStatus (){
+		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$("transactions-view-page").first().$( TestBenchElement.class ).id( "content" ).$( "search-component" ).first().$(GridElement.class).first().$(TestBenchElement.class).id("scroller").$(TestBenchElement.class).id("table").$(TestBenchElement.class).id("sizer").$(TestBenchElement.class).id("vaadin-grid-cell-32");
+	}
 }
 
 
