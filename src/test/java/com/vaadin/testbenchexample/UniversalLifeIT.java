@@ -21,7 +21,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "12345" );
+		getPolicy.searchByPolicy().sendKeys( "01N1506575" );
 		getPolicy.searchButton().click();
 		getPolicy.family().getCell( "12345" ).click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
@@ -64,7 +64,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "54321" );
+		getPolicy.searchByPolicy().sendKeys( "01N1506575" );
 		getPolicy.searchButton().click();
 		getPolicy.family().getCell( "54321" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
