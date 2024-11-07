@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import com.vaadin.testbench.screenshot.ImageFileUtil;
 
 public class UniversalLifeIT extends BaseLoginTest {
-/*
+
 	@Test
 	public void addSuspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -23,7 +23,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "01N1506575" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "12345" ).click();
+		getPolicy.family().getCell( "01N1506575" ).click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
 		addSuspense.suspense().click();
 		ScenarioView addSuspenseButton = $( ScenarioView.class ).first();
@@ -66,7 +66,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "01N1506575" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "54321" ).click();
+		getPolicy.family().getCell( "01N1506575" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
 		transaction.transactionsWL().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
@@ -110,7 +110,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 
 	}
 
-*/
+
 }
 
 

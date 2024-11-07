@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import com.vaadin.testbench.screenshot.ImageFileUtil;
 
 public class WholeLifeIT extends BaseLoginTest {
-/*
+
 	@Test
 	public void suspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -159,5 +159,5 @@ public class WholeLifeIT extends BaseLoginTest {
 
 
 	}
-*/
+
 }
