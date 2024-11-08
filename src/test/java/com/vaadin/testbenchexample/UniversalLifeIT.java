@@ -36,7 +36,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		suspenseSource.depositAccount().selectByText( "General Premium" );
 		suspenseSource.processButton().click();
 		ScenarioView checkSuspence=$(ScenarioView.class).first();
-	//	Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
+		Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
 
 		checkSuspence.transferSuspenceButton().click();
 		EntryDialogContent transferSuspence = $(EntryDialogContent.class).first();
@@ -55,7 +55,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		transferSuspence.note().sendKeys( "transfer to David Palmer" );
 		transferSuspence.okButton().click();
 		ScenarioView suspenceAmount=$(ScenarioView.class).first();
-	//	Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
+		Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
 
 
 	}
