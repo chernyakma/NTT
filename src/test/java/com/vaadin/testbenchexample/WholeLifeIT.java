@@ -124,7 +124,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		TransactionPopUpPageView selectTransaction = $(TransactionPopUpPageView.class).first();
 		selectTransaction.transactionType().selectByText( "Add Rider" );
 		EntryDialogContent addRider = $(EntryDialogContent.class).first();
-		addRider.coverageName().selectItemByIndex( 0);
+		addRider.coverageName().selectItemByIndex( 1);
 		addRider.faceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "5000" );
 		Assertions.assertEquals("5000",addRider.faceAmount().getValue());
 		TransactionPopUpPageView notes = $(TransactionPopUpPageView.class).first();
