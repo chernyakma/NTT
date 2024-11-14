@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java" afterDir="false" />
-    </list>
+    <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +46,7 @@
     "JUnit.AddFamilyIT.familyAddress.executor": "Run",
     "JUnit.UniversalLifeIT.addLoan.executor": "Run",
     "JUnit.UniversalLifeIT.executor": "Run",
+    "JUnit.WholeLifeIT.addRider.executor": "Run",
     "JUnit.WholeLifeIT.executor": "Run",
     "JUnit.WholeLifeIT.suspense.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -58,7 +56,7 @@
     "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.WholeLifeIT.addRider">
+  <component name="RunManager" selected="JUnit.UniversalLifeIT.addLoan">
     <configuration name="AddFamilyIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -138,9 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UniversalLifeIT.addLoan" />
         <item itemvalue="JUnit.WholeLifeIT.addRider" />
         <item itemvalue="JUnit.WholeLifeIT" />
-        <item itemvalue="JUnit.UniversalLifeIT.addLoan" />
         <item itemvalue="JUnit.UniversalLifeIT" />
         <item itemvalue="JUnit.AddFamilyIT" />
       </list>
