@@ -110,8 +110,8 @@ public class UniversalLifeIT extends BaseLoginTest {
 		confirmation.getSaveButton().click();
 
 	}
-
 */
+
 }
 
 

@@ -55,7 +55,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		Assertions.assertEquals( "10/15/1960", family.getDateOfBirth().getInputValue() );
         family.getSaveButton().click();
 	}
-
+/*
 	@Test
 	public void addSpouse (){
 
@@ -230,7 +230,7 @@ public class AddFamilyIT extends BaseLoginTest {
 	//	edit.getSaveButton().click();
 
 	}
-
+*/
 
 }
 

@@ -5,6 +5,17 @@
   <artifactId>NTT</artifactId>
   <name>NTT Project</name>
   <version>1.0-SNAPSHOT</version>
+
+    <reporting>
+        <plugins>
+            <!-- Surefire Report Plugin for HTML Reports -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.5.2</version>
+            </plugin>
+        </plugins>
+    </reporting>
   <packaging>jar</packaging>
   <properties>
  <maven.compiler.source>17</maven.compiler.source>
@@ -15,7 +26,6 @@
  <vaadin.version>24.3.7</vaadin.version>
       <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
   </properties>
-
 
   <repositories>
     <repository>
@@ -196,82 +206,59 @@
       </dependency>
 
   </dependencies>
-  <build>   
-    <plugins>     
-      <plugin>
-        <groupId>com.vaadin</groupId>
-        <artifactId>vaadin-maven-plugin</artifactId>
-        <version>${vaadin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>prepare-frontend</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-  <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.1.2</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>integration-test</goal>
-                  <goal>verify</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <includes>
-                <include>UniversalLifeIT.java</include>
-                  <include>WholeLifeIT.java</include>
-                 <include>BaseLoginTest.java</include>
-                <include>AddFamilyIT.java</include>
-              </includes>
-              <trimStackTrace>false</trimStackTrace>
+    <build>
+        <plugins>
+            <!-- Site Plugin Configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.9.1</version>
+            </plugin>
 
-              <enableAssertions>true</enableAssertions>
+            <!-- Surefire Plugin Configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <includes>
+                        <include>UniversalLifeIT.java</include>
+                        <include>WholeLifeIT.java</include>
+                        <include>BaseLoginTest.java</include>
+                        <include>AddFamilyIT.java</include>
+                    </includes>
+                    <reportFormat>brief</reportFormat>
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                 </configuration>
-          </plugin>
-        <plugin>
-        <groupId>io.qameta.allure</groupId>
-        <artifactId>allure-maven</artifactId>
-        <version>2.10.0</version>
-        <executions>
-            <execution>
-                <goals>
-                    <goal>report</goal>
-                </goals>
+            </plugin>
 
-            </execution>
-        </executions>
-        </plugin>
-    </plugins>
-  </build>
- <profiles>
-        <profile>
-            <id>production</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.vaadin</groupId>
-                        <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${vaadin.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>build-frontend</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+            <!-- Failsafe Plugin Configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>UniversalLifeIT.java</include>
+                        <include>WholeLifeIT.java</include>
+                        <include>BaseLoginTest.java</include>
+                        <include>AddFamilyIT.java</include>
+                    </includes>
+                    <trimStackTrace>false</trimStackTrace>
+                    <enableAssertions>true</enableAssertions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Other sections like profiles, dependencies, etc. -->
 </project>
-
-<!-- Other configurations -->
-
 
