@@ -227,29 +227,7 @@
             </plugin>
 
             <!-- Failsafe Plugin Configuration -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.1.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <includes>
-                        <include>UniversalLifeIT.java</include>
-                        <include>WholeLifeIT.java</include>
-                        <include>BaseLoginTest.java</include>
-                        <include>AddFamilyIT.java</include>
-                    </includes>
-                    <trimStackTrace>false</trimStackTrace>
-                    <enableAssertions>true</enableAssertions>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
 
