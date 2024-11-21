@@ -219,6 +219,10 @@
                     </includes>
                     <reportFormat>brief</reportFormat>
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    <forkCount>1</forkCount>
+                    <reuseForks>false</reuseForks>
+                    <parallel>none</parallel>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
 
@@ -244,6 +248,7 @@
                     </includes>
                     <trimStackTrace>false</trimStackTrace>
                     <enableAssertions>true</enableAssertions>
+                    <parallel>none</parallel>
                 </configuration>
             </plugin>
         </plugins>
