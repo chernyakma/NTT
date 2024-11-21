@@ -84,7 +84,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
 		confirm.getSaveButton().click();
-		Thread.sleep( 20_000 );
+		Thread.sleep( 25_000 );
 		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );

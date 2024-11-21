@@ -80,9 +80,10 @@ public class WholeLifeIT extends BaseLoginTest {
 		loan.okButton().click();
 		ScenarioView processLoanTransaction = $(ScenarioView.class).first();
 		processLoanTransaction.processInitialPremiumTransactionButton().click();
+//		Thread.sleep( 5_000 );
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
 		confirm.getSaveButton().click();
-		Thread.sleep( 15_000 );
+		Thread.sleep( 25_000 );
 		ScenarioView transactionsPage = $(ScenarioView.class).first();
         transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
