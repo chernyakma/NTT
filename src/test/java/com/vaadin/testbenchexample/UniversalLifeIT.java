@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import com.vaadin.testbench.screenshot.ImageFileUtil;
 
 public class UniversalLifeIT extends BaseLoginTest {
-/*
+
 	@Test
 	public void addSuspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -81,11 +81,10 @@ public class UniversalLifeIT extends BaseLoginTest {
 		loan.okButton().click();
 		ScenarioView processLoanTransaction = $(ScenarioView.class).first();
 		processLoanTransaction.processInitialPremiumTransactionButton().click();
-
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
 		confirm.getSaveButton().click();
-		Thread.sleep( 25_000 );
-		ScenarioView transactionsPage = $(ScenarioView.class).first();
+        ScenarioView transactionsPage = $(ScenarioView.class).first();
+        waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 80);
 		transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
@@ -103,15 +102,15 @@ public class UniversalLifeIT extends BaseLoginTest {
 		Thread.sleep( 5_000 );
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
 		ok.getSaveButton().click();
-		Thread.sleep( 10_000 );
-		ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
+		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
+        ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
 		deleteLoanTransaction.deleteLoanTransactionButton().click();
 		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
 		confirmation.getSaveButton().click();
 
 	}
 
-*/
+
 }
 
 
