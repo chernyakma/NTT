@@ -1,4 +1,5 @@
 package com.vaadin.testbenchexample;
+import com.vaadin.flow.component.radiobutton.testbench.RadioButtonGroupElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
@@ -135,8 +136,46 @@ public class EntryDialogContent extends TestBenchElement {
 		return $ (TestBenchElement.class).id( "BenefitsChangeSection" ).$( TextFieldElement.class).id( "FaceAmount" );
 	}
 
+	//Beneficiary
+	protected SelectElement selectBene (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("PartyGUID");
+	}
+	protected TextFieldElement firstName (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(TestBenchElement.class).id("sectionComponent").$(TextFieldElement.class).id("FirstName");
+	}
+	protected TextFieldElement lastName (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(TextFieldElement.class).id("LastName");
+	}
+	protected SelectElement gender (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("Gender");
+	}
+	protected DatePickerElement dob (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(DatePickerElement.class).id("DateOfBirth");
+	}
+	protected TextFieldElement ssn (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(TextFieldElement.class).id("SsnOrTaxID");
+	}
+	protected TextFieldElement email (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(TextFieldElement.class).id("Email");
+	}
+	protected TextFieldElement pnoneNumber (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(TextFieldElement.class).id("Phone1");
+	}
+	protected RadioButtonGroupElement defaultAddress (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(RadioButtonGroupElement.class).first();
+	}
 
-		public void addAccount(String bankName,String city,String routingNumber,String accountNumber ){
+	public void addBeneficiary (String firstName,String lastName,String ssn,String email,String phoneNumber){
+		firstName().sendKeys(firstName);
+		lastName().sendKeys(lastName);
+		ssn().sendKeys(ssn);
+		email().sendKeys(email);
+		pnoneNumber().sendKeys(phoneNumber);
+	}
+
+
+
+	public void addAccount(String bankName,String city,String routingNumber,String accountNumber ){
 		getFinancialInstitutionName().sendKeys( bankName );
 		getBankCity().sendKeys( city );
 		getRoutingNumber().sendKeys( routingNumber );

@@ -230,8 +230,37 @@ public class AddFamilyIT extends BaseLoginTest {
 	//	edit.getSaveButton().click();
 
 	}
+/*
+	@Test
+	public void addBeneficiary() throws InterruptedException {
+		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
+		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
+		getPolicy.searchByPolicy().sendKeys( "05W1001538" );
+		getPolicy.searchButton().click();
+		getPolicy.family().getCell( "05W1001538" ).click();
+		NaviMenuView getBeneficiaries = $( NaviMenuView.class ).first();
+		getBeneficiaries.beneficiaries().click();
+		ScenarioView addBeneficiary = $(ScenarioView.class).first();
+		addBeneficiary.getAddBeneButton().click();
+		EntryDialogContent bene = $(EntryDialogContent.class).first();
+		bene.selectBene().selectByText("Add New");
+		bene.okButton().click();
+		Thread.sleep( 3_000 );
+		EntryDialogContent newBeneficiary =$(EntryDialogContent.class).first();
+		newBeneficiary.addBeneficiary("Harry","Potter","253446453","chernyakma@yahoo.com","1234567890");
+		newBeneficiary.dob().setDate( LocalDate.of( 1980, 8, 25 ) );
+		newBeneficiary.gender().selectByText("Male");
+		Assertions.assertEquals("Potter",newBeneficiary.lastName().getValue());
+		Assertions.assertEquals("8/25/1980",newBeneficiary.dob().getInputValue());
+		Assertions.assertEquals("253-44-6453",newBeneficiary.ssn().getValue());
+		Assertions.assertEquals("chernyakma@yahoo.com",newBeneficiary.email().getValue());
+		newBeneficiary.okButton().click();
+		ScenarioView deleteBene =$(ScenarioView.class).first();
+		deleteBene.getDeleteBeneButton().click();
+	}
 
-
+*/
 }
 
 

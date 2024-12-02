@@ -64,9 +64,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1E09080" );
+		getPolicy.searchByPolicy().sendKeys( "05W1E07681" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1E09080" ).click();
+		getPolicy.family().getCell( "05W1E07681" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
 		transaction.transactionsWL().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
@@ -125,7 +125,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		TransactionPopUpPageView selectTransaction = $(TransactionPopUpPageView.class).first();
 		selectTransaction.transactionType().selectByText( "Add Rider" );
 		EntryDialogContent addRider = $(EntryDialogContent.class).first();
-		addRider.coverageName().selectItemByIndex( 1);
+		addRider.coverageName().selectItemByIndex( 0);
 		addRider.faceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "5000" );
 		Assertions.assertEquals("5000",addRider.faceAmount().getValue());
 		TransactionPopUpPageView notes = $(TransactionPopUpPageView.class).first();

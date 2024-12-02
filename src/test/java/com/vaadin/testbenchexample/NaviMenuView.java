@@ -38,6 +38,11 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 18 );
 	}
+
+	protected TestBenchElement beneficiaries() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 18 );
+	}
 //SPDA
 	protected TestBenchElement getDocumentSPDA() {
 
