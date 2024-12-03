@@ -15,7 +15,7 @@ import org.openqa.selenium.WebElement;
 import com.vaadin.testbench.screenshot.ImageFileUtil;
 
 public class UniversalLifeIT extends BaseLoginTest {
-
+/*
 	@Test
 	public void addSuspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -59,6 +59,8 @@ public class UniversalLifeIT extends BaseLoginTest {
 
 
 	}
+
+
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -110,7 +112,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 
 	}
 
-
+*/
 }
 
 

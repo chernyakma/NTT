@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/EntryDialogContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/EntryDialogContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/NaviMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/NaviMenuView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ScenarioView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ScenarioView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/SearchComponentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/SearchComponentView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,26 +45,44 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.AddFamilyIT.addFamily.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.editAddress.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.familyAddress.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniversalLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniversalLifeIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.addRider.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.suspense.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MariiaCherniak/Documents/GitHub/Amplify&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AddFamilyIT.addBeneficiary.executor": "Run",
+    "JUnit.AddFamilyIT.addFamily.executor": "Run",
+    "JUnit.AddFamilyIT.editAddress.executor": "Run",
+    "JUnit.AddFamilyIT.executor": "Run",
+    "JUnit.AddFamilyIT.familyAddress.executor": "Run",
+    "JUnit.UniversalLifeIT.addLoan.executor": "Run",
+    "JUnit.UniversalLifeIT.addSuspense.executor": "Run",
+    "JUnit.UniversalLifeIT.executor": "Run",
+    "JUnit.WholeLifeIT.addLoan.executor": "Run",
+    "JUnit.WholeLifeIT.addRider.executor": "Run",
+    "JUnit.WholeLifeIT.executor": "Run",
+    "JUnit.WholeLifeIT.suspense.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MariiaCherniak/Documents/GitHub/Amplify",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.WholeLifeIT.addRider">
+}]]></component>
+  <component name="RunManager" selected="JUnit.UniversalLifeIT.addSuspense">
+    <configuration name="AddFamilyIT.addBeneficiary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addBeneficiary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AddFamilyIT.addFamily" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -81,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UniversalLifeIT.addLoan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UniversalLifeIT.addSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -91,23 +109,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.UniversalLifeIT" />
-      <option name="METHOD_NAME" value="addLoan" />
+      <option name="METHOD_NAME" value="addSuspense" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WholeLifeIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UniversalLifeIT.addSuspense" />
+        <item itemvalue="JUnit.AddFamilyIT.addFamily" />
+        <item itemvalue="JUnit.AddFamilyIT.addBeneficiary" />
         <item itemvalue="JUnit.WholeLifeIT.addRider" />
         <item itemvalue="JUnit.WholeLifeIT.addLoan" />
-        <item itemvalue="JUnit.WholeLifeIT" />
-        <item itemvalue="JUnit.AddFamilyIT.addFamily" />
-        <item itemvalue="JUnit.UniversalLifeIT.addLoan" />
       </list>
     </recent_temporary>
   </component>

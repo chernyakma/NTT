@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
@@ -230,17 +231,18 @@ public class AddFamilyIT extends BaseLoginTest {
 	//	edit.getSaveButton().click();
 
 	}
-/*
+
 	@Test
 	public void addBeneficiary() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1001538" );
+		getPolicy.searchByPolicy().sendKeys( "05W1E05624" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1001538" ).click();
+		getPolicy.family().getCell( "05W1E05624" ).click();
 		NaviMenuView getBeneficiaries = $( NaviMenuView.class ).first();
 		getBeneficiaries.beneficiaries().click();
+		Thread.sleep( 3_000 );
 		ScenarioView addBeneficiary = $(ScenarioView.class).first();
 		addBeneficiary.getAddBeneButton().click();
 		EntryDialogContent bene = $(EntryDialogContent.class).first();
@@ -256,11 +258,29 @@ public class AddFamilyIT extends BaseLoginTest {
 		Assertions.assertEquals("253-44-6453",newBeneficiary.ssn().getValue());
 		Assertions.assertEquals("chernyakma@yahoo.com",newBeneficiary.email().getValue());
 		newBeneficiary.okButton().click();
+		ScenarioView beneficiary = $(ScenarioView.class).first();
+		beneficiary.getSaveButton().click();
+		Thread.sleep( 3_000 );
+		VaadinConfirmDialogView confirm = $ (VaadinConfirmDialogView.class).first();
+		confirm.getDeleteButton().click();
+		NaviMenuView family = $( NaviMenuView.class ).first();
+		family.getFamily().click();
+		ScenarioView getBeneficiary = $(ScenarioView.class).first();
+		Assertions.assertTrue(getBeneficiary.family().getCell("Potter").isDisplayed());
+		getBeneficiary.getDeleteFamilyBeneButton().click();
+		VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
+		delete.getSaveButton().click();
+		getBeneficiary.policyNumber().getCell("05W1E05624").click();
+		family.beneficiaries().click();
 		ScenarioView deleteBene =$(ScenarioView.class).first();
-		deleteBene.getDeleteBeneButton().click();
+    	deleteBene.getDeleteBeneButton().click();
+		deleteBene.getSaveButton().click();
+		Thread.sleep( 3_000 );
+		VaadinConfirmDialogView ok = $ (VaadinConfirmDialogView.class).first();
+		ok.getDeleteButton().click();
 	}
 
-*/
+
 }
 
 
