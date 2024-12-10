@@ -13,7 +13,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>3.5.2</version>
-
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets><!-- Use the latest version -->
             </plugin>
         </plugins>
     </reporting>
@@ -89,8 +95,8 @@
       <dependency>
           <groupId>org.apache.poi</groupId>
           <artifactId>poi-ooxml</artifactId>
-          <version>5.2.3</version> <!-- Use the latest version -->
-      </dependency>
+          <version>5.2.3</version>
+          </dependency>
       <dependency>
           <groupId>org.apache.poi</groupId>
           <artifactId>poi-ooxml-schemas</artifactId>
@@ -203,7 +209,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>3.21.0</version>
             </plugin>
 
             <!-- Surefire Plugin Configuration -->
@@ -218,12 +224,9 @@
                         <include>BaseLoginTest.java</include>
                         <include>AddFamilyIT.java</include>
                     </includes>
-                    <reportFormat>brief</reportFormat>
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-                    <forkCount>1</forkCount>
-                    <reuseForks>false</reuseForks>
-                    <parallel>none</parallel>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <printSummary>true</printSummary>
                 </configuration>
             </plugin>
 
