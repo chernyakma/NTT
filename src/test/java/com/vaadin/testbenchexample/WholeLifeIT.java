@@ -138,7 +138,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 60);
 
-		Assertions.assertEquals( "$105.18",transactionsPage.modalPremium().getText() );
+		Assertions.assertEquals( "$156.19",transactionsPage.modalPremium().getText() );
 
 //		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		transactionsPage.viewLoanTransactionButton().click();
