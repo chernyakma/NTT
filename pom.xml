@@ -227,6 +227,7 @@
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <printSummary>true</printSummary>
+                    <reportFormat>plain</reportFormat>
                 </configuration>
             </plugin>
 

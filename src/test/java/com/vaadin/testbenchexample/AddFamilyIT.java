@@ -50,7 +50,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		family.getPhoneType1().selectItemByIndex( 1 );
 		family.getPhoneType2().selectItemByIndex( 2 );
 		family.getFullTimePartTime().selectItemByIndex( 0 );
-		Assertions.assertEquals( "David", family.getFirstName().getValue() );
+		Assertions.assertEquals( "Michael", family.getFirstName().getValue() );
 		Assertions.assertEquals( "Palmer", family.getLastName().getValue() );
 		Assertions.assertEquals( "Male", family.getGender().getSelectedText() );
 		Assertions.assertEquals( "10/15/1960", family.getDateOfBirth().getInputValue() );

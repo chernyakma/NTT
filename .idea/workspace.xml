@@ -41,28 +41,28 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.AddFamilyIT.addBeneficiary.executor": "Run",
-    "JUnit.AddFamilyIT.addFamily.executor": "Run",
-    "JUnit.AddFamilyIT.addFamilyMemberFromPolicy.executor": "Run",
-    "JUnit.AddFamilyIT.editAddress.executor": "Run",
-    "JUnit.AddFamilyIT.executor": "Run",
-    "JUnit.AddFamilyIT.familyAddress.executor": "Run",
-    "JUnit.UniversalLifeIT.addLoan.executor": "Run",
-    "JUnit.UniversalLifeIT.addSuspense.executor": "Run",
-    "JUnit.UniversalLifeIT.executor": "Run",
-    "JUnit.WholeLifeIT.addLoan.executor": "Run",
-    "JUnit.WholeLifeIT.addRider.executor": "Run",
-    "JUnit.WholeLifeIT.executor": "Run",
-    "JUnit.WholeLifeIT.suspense.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MariiaCherniak/Documents/GitHub/Amplify",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AddFamilyIT.addBeneficiary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addFamily.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addFamilyMemberFromPolicy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.editAddress.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.familyAddress.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UniversalLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UniversalLifeIT.addSuspense.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UniversalLifeIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.addRider.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.suspense.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MariiaCherniak/Documents/GitHub/Amplify&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.AddFamilyIT.addFamilyMemberFromPolicy">
     <configuration name="AddFamilyIT.addBeneficiary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
