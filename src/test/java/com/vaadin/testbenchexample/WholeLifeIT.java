@@ -64,9 +64,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1E07681" );
+		getPolicy.searchByPolicy().sendKeys( "05W1061667" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1E07681" ).click();
+		getPolicy.family().getCell( "05W1061667" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
 		transaction.transactionsWL().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
