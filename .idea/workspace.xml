@@ -62,7 +62,23 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AddFamilyIT.addFamilyMemberFromPolicy">
+  <component name="RunManager" selected="JUnit.AddFamilyIT.addFamily">
+    <configuration name="AddFamilyIT.addFamily" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addFamily" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AddFamilyIT.addFamilyMemberFromPolicy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -74,22 +90,6 @@
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
       <option name="METHOD_NAME" value="addFamilyMemberFromPolicy" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AddFamilyIT.editAddress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
-      <option name="METHOD_NAME" value="editAddress" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddFamilyIT.addFamily" />
         <item itemvalue="JUnit.AddFamilyIT.addFamilyMemberFromPolicy" />
         <item itemvalue="JUnit.WholeLifeIT.addLoan" />
         <item itemvalue="JUnit.WholeLifeIT.addRider" />
         <item itemvalue="JUnit.AddFamilyIT.familyAddress" />
-        <item itemvalue="JUnit.AddFamilyIT.editAddress" />
       </list>
     </recent_temporary>
   </component>
