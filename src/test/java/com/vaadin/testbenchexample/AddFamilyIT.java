@@ -95,7 +95,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		deleteSpouse.getSaveButton().click();
 
 	}
-/*
+
 	@Test
 	public void addFamilyMemberFromPolicy(){
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -280,7 +280,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		ok.getDeleteButton().click();
 	}
 
-*/
+
 }
 
 
