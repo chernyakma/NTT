@@ -114,7 +114,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		family.addSpouse(  );
 		family.getSuffix().selectItemByIndex( 2 );
 		family.getGender().selectItemByIndex( 1 );
-		family.getDateOfBirth().setDate( LocalDate.of( 1965, 01, 05 ) );
+		family.getDateOfBirth().setDate( LocalDate.of( 1970, 01, 05 ) );
 		family.getNonTobacco().doubleClick();
 		family.getMarriageStatus().selectItemByIndex( 1 );
 		family.getHealthStatus().selectItemByIndex( 1 );
@@ -124,7 +124,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		Assertions.assertEquals( "Emma", family.getFirstName().getValue() );
 		Assertions.assertEquals( "Spouse", family.getLastName().getValue() );
 		Assertions.assertEquals( "Female", family.getGender().getSelectedText() );
-		Assertions.assertEquals( "1/5/1965", family.getDateOfBirth().getInputValue() );
+		Assertions.assertEquals( "1/5/1970", family.getDateOfBirth().getInputValue() );
 		family.getSaveButton().click();
 		family.FamilyButton().click();
 		//	NaviMenuView getFamilybutton = $( NaviMenuView.class ).first();
