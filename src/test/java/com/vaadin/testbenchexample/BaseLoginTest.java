@@ -79,7 +79,11 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	performLogin();
 
 	// Set TestBench parameters for screenshot comparison
-	Parameters.setScreenshotReferenceDirectory("src/test/screenshots");
+//	Parameters.setScreenshotReferenceDirectory("src/test/screenshots");
+//		Parameters.setScreenshotReferenceDirectory("/var/lib/jenkins/workspace/NTT/reference-screenshots");
+
+		Parameters.setScreenshotReferenceDirectory(System.getProperty("user.dir") + "/reference-screenshots");
+
 	Parameters.setScreenshotComparisonTolerance(1.0);
 	driver.manage().window().setSize(new Dimension(1024, 768));
 	Parameters.setScreenshotRetryDelay(10);
