@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import com.vaadin.testbench.Parameters;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -87,8 +88,10 @@ public class WholeLifeIT extends BaseLoginTest {
 		waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 80);
         transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
+		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
 		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
 			"Screenshot 2024-05-31 165801.png" ) ) );
+		
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
 		NaviMenuView policy = $(NaviMenuView.class).first();
