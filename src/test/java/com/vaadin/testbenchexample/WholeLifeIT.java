@@ -4,12 +4,11 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import com.vaadin.testbench.Parameters;
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import com.vaadin.testbench.screenshot.ImageFileUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -80,6 +79,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		loan.disbursementMethod().selectByText( "Check Disbursement" );
 		Assertions.assertEquals( "1,000.00",loan.loanAmount().getValue() );
 		loan.okButton().click();
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("error-screenshots/start-of-test.png"));
+
 		ScenarioView processLoanTransaction = $(ScenarioView.class).first();
 		processLoanTransaction.processInitialPremiumTransactionButton().click();
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
@@ -89,9 +91,21 @@ public class WholeLifeIT extends BaseLoginTest {
         transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
-		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
-			"Screenshot 2024-05-31 165801.png" ) ) );
-
+	//	Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
+	//		"Screenshot 2024-05-31 165801.png" ) ) );
+		try {
+			// TestBench screenshot comparison
+			Assert.assertTrue(testBench().compareScreen(
+					ImageFileUtil.getReferenceScreenshotFile("Screenshot 2024-05-31 165801.png")
+			));
+		} catch (AssertionError e) {
+			// Capture and save the failure screenshot manually
+			File screenshot1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File destination = new File("error-screenshots/failure-Screenshot-2024-05-31-165801.png");
+			FileUtils.copyFile(screenshot, destination);
+			System.out.println("Screenshot saved: " + destination.getAbsolutePath());
+			throw e; // Rethrow to fail the test
+		}
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
 		NaviMenuView policy = $(NaviMenuView.class).first();
