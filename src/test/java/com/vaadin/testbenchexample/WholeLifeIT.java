@@ -91,21 +91,34 @@ public class WholeLifeIT extends BaseLoginTest {
         transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
-	//	Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
-	//		"Screenshot 2024-05-31 165801.png" ) ) );
+
 		try {
 			// TestBench screenshot comparison
 			Assert.assertTrue(testBench().compareScreen(
 					ImageFileUtil.getReferenceScreenshotFile("Screenshot 2024-05-31 165801.png")
 			));
 		} catch (AssertionError e) {
-			// Capture and save the failure screenshot manually
-			File screenshot1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			File destination = new File("error-screenshots/failure-Screenshot-2024-05-31-165801.png");
-			FileUtils.copyFile(screenshot1, destination);
-			System.out.println("Screenshot saved: " + destination.getAbsolutePath());
-			throw e; // Rethrow to fail the test
+			try {
+				// Ensure the directory exists
+				File errorScreenshotDir = new File("error-screenshots");
+				if (!errorScreenshotDir.exists()) {
+					errorScreenshotDir.mkdirs();
+				}
+
+				// Capture and save the failure screenshot
+				File screenshot1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				File destination = new File(errorScreenshotDir, "failure-Screenshot-2024-05-31-165801.png");
+				FileUtils.copyFile(screenshot1, destination);
+
+				System.out.println("Screenshot saved: " + destination.getAbsolutePath());
+			} catch (IOException ioException) {
+				System.err.println("Failed to save screenshot: " + ioException.getMessage());
+			}
+
+			// Re-throw the AssertionError to fail the test
+			throw e;
 		}
+
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
 		NaviMenuView policy = $(NaviMenuView.class).first();
