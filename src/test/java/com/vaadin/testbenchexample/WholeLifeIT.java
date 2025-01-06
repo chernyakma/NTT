@@ -102,7 +102,7 @@ public class WholeLifeIT extends BaseLoginTest {
 			// Capture and save the failure screenshot manually
 			File screenshot1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			File destination = new File("error-screenshots/failure-Screenshot-2024-05-31-165801.png");
-			FileUtils.copyFile(screenshot, destination);
+			FileUtils.copyFile(screenshot1, destination);
 			System.out.println("Screenshot saved: " + destination.getAbsolutePath());
 			throw e; // Rethrow to fail the test
 		}
