@@ -88,7 +88,12 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	driver.manage().window().setSize(new Dimension(1024, 768));
 	Parameters.setScreenshotRetryDelay(10);
 	Parameters.setScreenshotComparisonCursorDetection(true);
-}
+		File errorScreenshotDir = new File("error-screenshots");
+		if (!errorScreenshotDir.exists()) {
+			errorScreenshotDir.mkdirs();
+		}
+
+	}
 
 	// Your login method
 
