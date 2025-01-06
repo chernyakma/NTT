@@ -31,16 +31,16 @@ public class WholeLifeIT extends BaseLoginTest {
 		EntryDialogContent suspenseSource = $( EntryDialogContent.class ).first();
 		suspenseSource.suspenseAmount().sendKeys( "100000" );
 		Assertions.assertEquals( "100000",suspenseSource.suspenseAmount().getValue() );
-		suspenseSource.suspenseSource().selectByText( "Check" );
-		Assertions.assertEquals( "Check",suspenseSource.suspenseSource().getSelectedText() );
-		suspenseSource.depositAccount().selectByText( "General Premium" );
+		suspenseSource.suspenseSource().selectByText( "Credit Card" );
+		Assertions.assertEquals( "Credit Card",suspenseSource.suspenseSource().getSelectedText() );
+		suspenseSource.depositAccount().selectByText( "POLICY SUSPENSE" );
 		suspenseSource.processButton().click();
 		ScenarioView checkSuspence=$(ScenarioView.class).first();
 //				Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
 
 		checkSuspence.transferSuspenceButton().click();
 		EntryDialogContent transferSuspence = $(EntryDialogContent.class).first();
-		transferSuspence.fromAccount().selectByText( "General Premium" );
+		transferSuspence.fromAccount().selectByText( "POLICY SUSPENSE" );
 		//	EntryDialogContent transferSuspenceTo = $(EntryDialogContent.class).first();
 		//	transferSuspence.note().sendKeys( "123" );
 		//	transferSuspence.toAccount().focus();
@@ -48,14 +48,14 @@ public class WholeLifeIT extends BaseLoginTest {
 		transferSuspence.searchFamily().sendKeys( "Palmer" );
 		transferSuspence.search().doubleClick();
 		transferSuspence.family().getCell( "Palmer" ).click();
-		transferSuspence.toAccount().selectByText( "General Premium" );
+		transferSuspence.toAccount().selectByText( "Conv Suspense - Disburse" );
 		transferSuspence.transferAmount().sendKeys( "100000" );
 		Assertions.assertEquals( "100000",transferSuspence.transferAmount().getValue() );
 		transferSuspence.transferEffectveDate().setDate( LocalDate.now() );
 		transferSuspence.note().sendKeys( "transfer to David Palmer" );
 		transferSuspence.okButton().click();
 		ScenarioView suspenceAmount=$(ScenarioView.class).first();
-//			Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
+//		Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
 
 
 	}
@@ -91,7 +91,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
 		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
 			"Screenshot 2024-05-31 165801.png" ) ) );
-		
+
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
 		NaviMenuView policy = $(NaviMenuView.class).first();

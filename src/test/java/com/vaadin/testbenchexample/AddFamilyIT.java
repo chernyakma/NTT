@@ -154,7 +154,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		EntryDialogContent bankAccount =$(EntryDialogContent.class).first();
 		bankAccount.addAccount( "Bank of America","Norfolk","051000017","1234566789" );
         bankAccount.getAccountType().selectByText( "Checking" );
-		bankAccount.getBankState().selectByText( "VA" );
+		bankAccount.getBankState().selectByText( "Virginia" );
 		Assertions.assertEquals( "Bank of America",bankAccount.getFinancialInstitutionName().getValue() );
 		Assertions.assertEquals( "051000017",bankAccount.getRoutingNumber().getValue() );
 		Assertions.assertEquals( "Checking",bankAccount.getAccountType().getSelectedText() );
@@ -182,13 +182,13 @@ public class AddFamilyIT extends BaseLoginTest {
 	AddressView setAddress=$ (AddressView.class).first();
 	setAddress.getCountry().selectByText( "USA" );
 	setAddress.address( "74 River Street","25 Main Street","Norfolk","23503" );
-	setAddress.getState().selectByText( "VA" );
+	setAddress.getState().selectByText( "Virginia" );
 	setAddress.getAddressType().selectItemByIndex( 1 );
 	Assertions.assertEquals( "Residence",setAddress.getAddressType().getSelectedText() );
 	setAddress.getDefaultMailing().click();
 //	setAddress.getDefaultBilling().click();
 //	setAddress.getDefaultResidence().click();
-	Assertions.assertEquals( "VA", setAddress.getState().getSelectedText());
+	Assertions.assertEquals( "Virginia", setAddress.getState().getSelectedText());
 	Assertions.assertEquals( "74 River Street", setAddress.getLine1().getValue());
 	Assertions.assertEquals( "25 Main Street", setAddress.getLine2().getValue());
 	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );

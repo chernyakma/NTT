@@ -41,6 +41,7 @@ public class EntryDialogContent extends TestBenchElement {
 		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$( TextFieldElement.class ).id( "RoutingNumber" );
 
 	}
+
 	protected SelectElement getPartyType() {
 		return $( TestBenchElement.class ).id( "FinancialInstitutionInfoSection" ).$(SelectElement.class).id( "PartyType" );
 	}
@@ -180,6 +181,7 @@ public class EntryDialogContent extends TestBenchElement {
 		getBankCity().sendKeys( city );
 		getRoutingNumber().sendKeys( routingNumber );
 		getAccountNumber().sendKeys( accountNumber );
+
 
 	}
 
