@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="" />
+    <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error-screenshots/start-of-test.png" beforeDir="false" afterPath="$PROJECT_DIR$/error-screenshots/start-of-test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
