@@ -60,49 +60,33 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 */
 	@Before
 	public void setUp() {
-	// Configure download preferences for Chrome
-	String downloadFilepath = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles";
-	Map<String, Object> prefs = new HashMap<>();
-	prefs.put("download.default_directory", downloadFilepath);
-	prefs.put("download.prompt_for_download", false); // Disable download prompts
-	prefs.put("safebrowsing.enabled", true); // Disable safety warnings for downloads
-
-	// Set Chrome options
-	ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless", "--disable-gpu");
-	options.setExperimentalOption("prefs", prefs);
+		// Configure WebDriverManager
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
 
-
-		// Optional: If you want to run the tests in headless mode (without a UI)
-	// options.addArguments("--headless", "--disable-gpu");
-//	setDriver(new ChromeDriver());
-	// Initialize the ChromeDriver with the specified options and capabilities
-//	driver = new ChromeDriver(options);
+		// Configure Chrome options
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless", "--disable-gpu"); // Headless mode for EC2
 		setDriver(new ChromeDriver(options));
-	// Perform login or other initial setup
-	performLogin();
 
-	// Set TestBench parameters for screenshot comparison
-//	Parameters.setScreenshotReferenceDirectory("src/test/screenshots");
-//		Parameters.setScreenshotReferenceDirectory("/var/lib/jenkins/workspace/NTT/reference-screenshots");
+		// Perform login or other initial setup
+		performLogin();
 
+		// Set TestBench parameters for screenshot comparison
 		Parameters.setScreenshotReferenceDirectory(System.getProperty("user.dir") + "/reference-screenshots");
-//		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
-	Parameters.setScreenshotComparisonTolerance(1.0);
-	driver.manage().window().setSize(new Dimension(1024, 768));
-	Parameters.setScreenshotRetryDelay(10);
-	Parameters.setScreenshotComparisonCursorDetection(true);
+		Parameters.setScreenshotComparisonTolerance(1.0);
+		Parameters.setScreenshotRetryDelay(10);
+		Parameters.setScreenshotComparisonCursorDetection(true);
+
+		// Ensure error-screenshots directory exists
 		File errorScreenshotDir = new File("error-screenshots");
 		if (!errorScreenshotDir.exists()) {
 			errorScreenshotDir.mkdirs();
-			String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-			File destination = new File("error-screenshots/failure-" + timestamp + "-Screenshot-2024-05-31-165801.png");
-
 		}
 
+		// Set the browser window size
+		getDriver().manage().window().setSize(new Dimension(1024, 768));
 	}
+
 
 	// Your login method
 
