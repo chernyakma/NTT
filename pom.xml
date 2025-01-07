@@ -228,7 +228,7 @@
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <printSummary>true</printSummary>
                     <reportFormat>plain</reportFormat>
-                </configuration>
+                    </configuration>
             </plugin>
 
             <!-- Failsafe Plugin Configuration -->

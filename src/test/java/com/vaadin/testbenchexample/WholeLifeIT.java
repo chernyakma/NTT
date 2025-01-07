@@ -139,6 +139,14 @@ public class WholeLifeIT extends BaseLoginTest {
 		confirmation.getSaveButton().click();
 
 	}
+	@Test
+	public void verifyScreenshotFile() {
+		File referenceScreenshot = new File("/var/lib/jenkins/workspace/NTT/reference-screenshots/Screenshot 2024-05-31 165801.png");
+		System.out.println("Resolved path: " + referenceScreenshot.getAbsolutePath());
+		System.out.println("File exists: " + referenceScreenshot.exists());
+		System.out.println("File length: " + referenceScreenshot.length());
+		Assert.assertTrue("Reference screenshot file does not exist", referenceScreenshot.exists());
+	}
 	/*
 	@Test
 	public void addRider() throws InterruptedException, IOException {
