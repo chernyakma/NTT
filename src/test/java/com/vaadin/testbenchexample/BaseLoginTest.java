@@ -66,7 +66,7 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 		// Configure Chrome options
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage", "--remote-debugging-port=9222"); // Headless mode for EC2
-		options.setBinary("/opt/google/chrome/chrome");
+//		options.setBinary("/opt/google/chrome/chrome");
 		setDriver(new ChromeDriver(options));
 
 		// Perform login or other initial setup
