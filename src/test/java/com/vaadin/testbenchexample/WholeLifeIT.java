@@ -68,7 +68,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		getPolicy.searchButton().click();
 		getPolicy.family().getCell( "06W1062839" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
-		transaction.transactionsWL().click();
+		transaction.transactions().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
 		loanTransaction.addTransactionButton().click();
 //		EntryDialogContent selectTransaction = $(EntryDialogContent.class).first();
@@ -126,7 +126,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView policyPage = $(ScenarioView.class).first();
 		Assertions.assertEquals( "1,000.00",policyPage.loanBalance().getValue() );
 		NaviMenuView transactions = $(NaviMenuView.class).first();
-		transactions.transactionsWL().click();
+		transactions.transactions().click();
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseLoanTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
