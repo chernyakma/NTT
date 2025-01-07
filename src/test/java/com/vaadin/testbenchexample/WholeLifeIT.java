@@ -97,6 +97,8 @@ public class WholeLifeIT extends BaseLoginTest {
 
 		try {
 			System.err.println("Starting addLoan test...");
+			
+
 
 			File referenceScreenshot = ImageFileUtil.getReferenceScreenshotFile("Screenshot 2024-05-31 165801.png");
 			System.err.println("Reference screenshot path: " + referenceScreenshot.getAbsolutePath());
