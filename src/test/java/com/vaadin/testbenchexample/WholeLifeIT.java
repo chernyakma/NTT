@@ -61,7 +61,7 @@ public class WholeLifeIT extends BaseLoginTest {
 */
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
-		System.out.println("Starting test: addLoan");
+		System.err.println("Starting test: addLoan");
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
@@ -91,7 +91,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 80);
         transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
-		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
+		System.err.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
 
 		try {
 			// TestBench screenshot comparison
@@ -111,7 +111,7 @@ public class WholeLifeIT extends BaseLoginTest {
 				File destination = new File(errorScreenshotDir, "failure-Screenshot-2024-05-31-165801.png");
 				FileUtils.copyFile(screenshot1, destination);
 
-				System.out.println("Screenshot saved: " + destination.getAbsolutePath());
+				System.err.println("Screenshot saved: " + destination.getAbsolutePath());
 			} catch (IOException ioException) {
 				System.err.println("Failed to save screenshot: " + ioException.getMessage());
 			}
@@ -142,9 +142,9 @@ public class WholeLifeIT extends BaseLoginTest {
 	@Test
 	public void verifyScreenshotFile() {
 		File referenceScreenshot = new File("/var/lib/jenkins/workspace/NTT/reference-screenshots/Screenshot 2024-05-31 165801.png");
-		System.out.println("Resolved path: " + referenceScreenshot.getAbsolutePath());
-		System.out.println("File exists: " + referenceScreenshot.exists());
-		System.out.println("File length: " + referenceScreenshot.length());
+		System.err.println("Resolved path: " + referenceScreenshot.getAbsolutePath());
+		System.err.println("File exists: " + referenceScreenshot.exists());
+		System.err.println("File length: " + referenceScreenshot.length());
 		Assert.assertTrue("Reference screenshot file does not exist", referenceScreenshot.exists());
 	}
 	/*
