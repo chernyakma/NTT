@@ -72,7 +72,7 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 		options.addArguments("--headless", "--disable-gpu");
 		options.setExperimentalOption("prefs", prefs);
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+//		WebDriver driver = new ChromeDriver();
 
 
 		// Optional: If you want to run the tests in headless mode (without a UI)
