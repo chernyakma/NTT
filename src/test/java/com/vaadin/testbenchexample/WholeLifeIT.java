@@ -61,6 +61,7 @@ public class WholeLifeIT extends BaseLoginTest {
 */
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
+		System.out.println("Starting test: addLoan");
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
