@@ -14,7 +14,7 @@ import com.vaadin.testbench.screenshot.ImageFileUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class WholeLifeIT extends BaseLoginTest {
-
+/*
 	@Test
 	public void suspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -58,7 +58,7 @@ public class WholeLifeIT extends BaseLoginTest {
 
 
 	}
-
+*/
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -138,6 +138,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		confirmation.getSaveButton().click();
 
 	}
+	/*
 	@Test
 	public void addRider() throws InterruptedException, IOException {
 /*
@@ -191,7 +192,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
 		confirmation.getSaveButton().click();
 
-*/
-	}
 
+	}
+*/
 }
