@@ -94,30 +94,27 @@ public class WholeLifeIT extends BaseLoginTest {
 		System.err.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
 
 		try {
-			// TestBench screenshot comparison
-			Assert.assertTrue(testBench().compareScreen(
-					ImageFileUtil.getReferenceScreenshotFile("Screenshot 2024-05-31 165801.png")
-			));
-		} catch (AssertionError e) {
-			try {
-				// Ensure the directory exists
-				File errorScreenshotDir = new File("error-screenshots");
-				if (!errorScreenshotDir.exists()) {
-					errorScreenshotDir.mkdirs();
-				}
+			System.err.println("Starting addLoan test...");
 
-				// Capture and save the failure screenshot
-				File screenshot1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				File destination = new File(errorScreenshotDir, "failure-Screenshot-2024-05-31-165801.png");
-				FileUtils.copyFile(screenshot1, destination);
+			File referenceScreenshot = ImageFileUtil.getReferenceScreenshotFile("Screenshot 2024-05-31 165801.png");
+			System.err.println("Reference screenshot path: " + referenceScreenshot.getAbsolutePath());
+			System.err.println("Reference screenshot exists: " + referenceScreenshot.exists());
 
-				System.err.println("Screenshot saved: " + destination.getAbsolutePath());
-			} catch (IOException ioException) {
-				System.err.println("Failed to save screenshot: " + ioException.getMessage());
-			}
+			boolean comparisonResult = testBench().compareScreen(referenceScreenshot);
+			System.err.println("Screenshot comparison result: " + comparisonResult);
 
-			// Re-throw the AssertionError to fail the test
-			throw e;
+			Assert.assertTrue("Screenshot comparison failed", comparisonResult);
+		} catch (Exception e) {
+			System.err.println("An error occurred: " + e.getMessage());
+			e.printStackTrace(System.err);
+
+			// Optionally save a failure screenshot for debugging
+			File actualScreenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File destination = new File("error-screenshots/failure-Screenshot-2024-05-31-165801.png");
+			FileUtils.copyFile(actualScreenshot, destination);
+			System.err.println("Failure screenshot saved to: " + destination.getAbsolutePath());
+
+			throw e; // Re-throw to fail the test
 		}
 
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
