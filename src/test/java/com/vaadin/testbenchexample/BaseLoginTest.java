@@ -1,5 +1,6 @@
 package com.vaadin.testbenchexample;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +13,8 @@ import com.vaadin.testbench.Parameters;
 import com.vaadin.testbench.TestBenchElement;
 import com.vaadin.testbench.TestBenchTestCase;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.poi.hpsf.Date;
 import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -68,8 +71,11 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	ChromeOptions options = new ChromeOptions();
 	options.addArguments("--headless", "--disable-gpu");
 	options.setExperimentalOption("prefs", prefs);
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
 
-	// Optional: If you want to run the tests in headless mode (without a UI)
+
+		// Optional: If you want to run the tests in headless mode (without a UI)
 	// options.addArguments("--headless", "--disable-gpu");
 //	setDriver(new ChromeDriver());
 	// Initialize the ChromeDriver with the specified options and capabilities
@@ -91,6 +97,9 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 		File errorScreenshotDir = new File("error-screenshots");
 		if (!errorScreenshotDir.exists()) {
 			errorScreenshotDir.mkdirs();
+			String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+			File destination = new File("error-screenshots/failure-" + timestamp + "-Screenshot-2024-05-31-165801.png");
+
 		}
 
 	}

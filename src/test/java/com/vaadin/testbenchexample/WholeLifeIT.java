@@ -1,10 +1,12 @@
 package com.vaadin.testbenchexample;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 import com.vaadin.testbench.Parameters;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hpsf.Date;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -108,14 +110,22 @@ public class WholeLifeIT extends BaseLoginTest {
 			System.err.println("An error occurred: " + e.getMessage());
 			e.printStackTrace(System.err);
 
-			// Optionally save a failure screenshot for debugging
+			// Create error-screenshots directory if it doesn't exist
+			File errorScreenshotDir = new File("error-screenshots");
+			if (!errorScreenshotDir.exists()) {
+				errorScreenshotDir.mkdirs();
+			}
+
+			// Save a failure screenshot with a timestamp
+			String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 			File actualScreenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			File destination = new File("error-screenshots/failure-Screenshot-2024-05-31-165801.png");
+			File destination = new File("error-screenshots/failure-" + timestamp + "-Screenshot-2024-05-31-165801.png");
 			FileUtils.copyFile(actualScreenshot, destination);
 			System.err.println("Failure screenshot saved to: " + destination.getAbsolutePath());
 
 			throw e; // Re-throw to fail the test
 		}
+
 
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
