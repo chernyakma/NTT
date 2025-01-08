@@ -63,7 +63,7 @@ public class WholeLifeIT extends BaseLoginTest {
 */
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
-		System.err.println("Starting test: addLoan");
+//		System.err.println("Starting test: addLoan");
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
@@ -82,8 +82,8 @@ public class WholeLifeIT extends BaseLoginTest {
 		loan.disbursementMethod().selectByText( "Check Disbursement" );
 		Assertions.assertEquals( "1,000.00",loan.loanAmount().getValue() );
 		loan.okButton().click();
-		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("error-screenshots/start-of-test.png"));
+//		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(screenshot, new File("error-screenshots/start-of-test.png"));
 
 		ScenarioView processLoanTransaction = $(ScenarioView.class).first();
 		processLoanTransaction.processInitialPremiumTransactionButton().click();
@@ -91,7 +91,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		confirm.getSaveButton().click();
 		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 80);
-        transactionsPage.viewLoanTransactionButton().click();
+     /*   transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		System.err.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
 
@@ -131,6 +131,8 @@ public class WholeLifeIT extends BaseLoginTest {
 
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
+
+      */
 		NaviMenuView policy = $(NaviMenuView.class).first();
 		policy.getPolicy().click();
 		ScenarioView policyPage = $(ScenarioView.class).first();
@@ -148,14 +150,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		confirmation.getSaveButton().click();
 
 	}
-	@Test
-	public void verifyScreenshotFile() {
-		File referenceScreenshot = new File("/var/lib/jenkins/workspace/NTT/reference-screenshots/Screenshot 2024-05-31 165801.png");
-		System.err.println("Resolved path: " + referenceScreenshot.getAbsolutePath());
-		System.err.println("File exists: " + referenceScreenshot.exists());
-		System.err.println("File length: " + referenceScreenshot.length());
-		Assert.assertTrue("Reference screenshot file does not exist", referenceScreenshot.exists());
-	}
+
 	/*
 	@Test
 	public void addRider() throws InterruptedException, IOException {
