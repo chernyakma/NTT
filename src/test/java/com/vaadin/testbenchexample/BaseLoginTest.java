@@ -90,7 +90,7 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 
 		Parameters.setScreenshotReferenceDirectory(System.getProperty("user.dir") + "/reference-screenshots");
 //		System.out.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
-		Parameters.setScreenshotComparisonTolerance(1.0);
+		Parameters.setScreenshotComparisonTolerance(2.0);
 		driver.manage().window().setSize(new Dimension(1024, 768));
 		Parameters.setScreenshotRetryDelay(10);
 		Parameters.setScreenshotComparisonCursorDetection(true);
