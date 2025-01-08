@@ -30,7 +30,7 @@ public class AddFamilyIT extends BaseLoginTest {
 
 
 
-/*
+
 
 	@Test
 
@@ -280,7 +280,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		ok.getDeleteButton().click();
 	}
 
-*/
+
 }
 
 

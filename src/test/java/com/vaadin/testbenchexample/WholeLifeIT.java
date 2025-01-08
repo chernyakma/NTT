@@ -16,7 +16,7 @@ import com.vaadin.testbench.screenshot.ImageFileUtil;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class WholeLifeIT extends BaseLoginTest {
-/*
+
 	@Test
 	public void suspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -60,7 +60,7 @@ public class WholeLifeIT extends BaseLoginTest {
 
 
 	}
-*/
+
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
 //		System.err.println("Starting test: addLoan");
@@ -151,10 +151,10 @@ public class WholeLifeIT extends BaseLoginTest {
 
 	}
 
-	/*
+
 	@Test
 	public void addRider() throws InterruptedException, IOException {
-/*
+
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
@@ -162,7 +162,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		getPolicy.searchButton().click();
 		getPolicy.family().getCell( "06W1062839" ).click();
 		NaviMenuView transaction = $( NaviMenuView.class ).first();
-		transaction.transactionsWL().click();
+		transaction.transactions().click();
 		ScenarioView loanTransaction = $(ScenarioView.class).first();
 		loanTransaction.addTransactionButton().click();
 		//		EntryDialogContent selectTransaction = $(EntryDialogContent.class).first();
@@ -184,7 +184,7 @@ public class WholeLifeIT extends BaseLoginTest {
 
 		Assertions.assertEquals( "$156.19",transactionsPage.modalPremium().getText() );
 
-//		ScenarioView transactionsPage = $(ScenarioView.class).first();
+/*		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		transactionsPage.viewLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		Assert.assertTrue( testBench().compareScreen( ImageFileUtil.getReferenceScreenshotFile(
@@ -192,7 +192,7 @@ public class WholeLifeIT extends BaseLoginTest {
 //		Assertions.assertEquals("Actual",processTransaction.transactionStatus().getText());
 		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
 		transactionPage.cancel().click();
-
+*/
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseAddRiderTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
@@ -207,5 +207,5 @@ public class WholeLifeIT extends BaseLoginTest {
 
 
 	}
-*/
+
 }

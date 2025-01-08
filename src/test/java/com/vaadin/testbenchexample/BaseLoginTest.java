@@ -53,11 +53,11 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 */
 
 
-	/*	@After
+		@After
 	public void tearDown() throws Exception {
 			getDriver().quit();
 	}
-*/
+
 	@Before
 	public void setUp() {
 		// Configure download preferences for Chrome
@@ -75,11 +75,8 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 //		WebDriver driver = new ChromeDriver();
 
 
-		// Optional: If you want to run the tests in headless mode (without a UI)
-		// options.addArguments("--headless", "--disable-gpu");
-//	setDriver(new ChromeDriver());
-		// Initialize the ChromeDriver with the specified options and capabilities
-//	driver = new ChromeDriver(options);
+
+
 		setDriver(new ChromeDriver(options));
 		// Perform login or other initial setup
 		performLogin();
