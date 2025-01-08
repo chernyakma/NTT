@@ -41,7 +41,7 @@ public class NaviMenuView extends TestBenchElement {
 
 	protected TestBenchElement beneficiaries() {
 
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 21 );
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 18 );
 	}
 //SPDA
 	protected TestBenchElement getDocumentSPDA() {
@@ -80,7 +80,7 @@ public class NaviMenuView extends TestBenchElement {
 
 	protected TestBenchElement suspense() {
 
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 33 );
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 30 );
 	}
 
 

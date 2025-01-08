@@ -45,15 +45,15 @@ public class WholeLifeIT extends BaseLoginTest {
 		//	EntryDialogContent transferSuspenceTo = $(EntryDialogContent.class).first();
 		//	transferSuspence.note().sendKeys( "123" );
 		//	transferSuspence.toAccount().focus();
-		transferSuspence.toAccount().selectByText( "Family" );
-		transferSuspence.searchFamily().sendKeys( "Palmer" );
+		transferSuspence.toAccount().selectByText( "Policy" );
+		transferSuspence.searchFamily().sendKeys( "05W1E00518" );
 		transferSuspence.search().doubleClick();
-		transferSuspence.family().getCell( "Palmer" ).click();
-		transferSuspence.toAccount().selectByText( "Conv Suspense - Disburse" );
+		transferSuspence.family().getCell( "05W1E00518" ).click();
+		transferSuspence.toAccount().selectByText( "POLICY SUSPENSE" );
 		transferSuspence.transferAmount().sendKeys( "100000" );
 		Assertions.assertEquals( "100000",transferSuspence.transferAmount().getValue() );
 		transferSuspence.transferEffectveDate().setDate( LocalDate.now() );
-		transferSuspence.note().sendKeys( "transfer to David Palmer" );
+		transferSuspence.note().sendKeys( "transfer" );
 		transferSuspence.okButton().click();
 		ScenarioView suspenceAmount=$(ScenarioView.class).first();
 //		Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
@@ -63,7 +63,6 @@ public class WholeLifeIT extends BaseLoginTest {
 
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
-//		System.err.println("Starting test: addLoan");
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
@@ -82,9 +81,6 @@ public class WholeLifeIT extends BaseLoginTest {
 		loan.disbursementMethod().selectByText( "Check Disbursement" );
 		Assertions.assertEquals( "1,000.00",loan.loanAmount().getValue() );
 		loan.okButton().click();
-//		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//		FileUtils.copyFile(screenshot, new File("error-screenshots/start-of-test.png"));
-
 		ScenarioView processLoanTransaction = $(ScenarioView.class).first();
 		processLoanTransaction.processInitialPremiumTransactionButton().click();
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
