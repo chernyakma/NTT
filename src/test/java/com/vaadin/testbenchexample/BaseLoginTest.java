@@ -26,31 +26,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public abstract class BaseLoginTest extends TestBenchTestCase {
-/*
 
-	@Before
-	public void setUp() {
-    //ChromeOptions options = new ChromeOptions();
-    //options.addArguments("--headless", "--disable-gpu");
-    //setDriver(new ChromeDriver(options));
-		setDriver(new ChromeDriver());
-		performLogin();
-
-		Parameters.setScreenshotReferenceDirectory( "src/test/screenshots");
-		Parameters.setScreenshotComparisonTolerance(1.0);
-		driver.manage().window().setSize( new Dimension( 1024, 768));
-		Parameters.setScreenshotRetryDelay(10);
-		Parameters.setScreenshotComparisonCursorDetection(true);
-        String downloadFilepath = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles";
-	Map<String, Object> prefs = new HashMap<>();
-	prefs.put("download.default_directory", downloadFilepath);
-	prefs.put("download.prompt_for_download", false); // Disable download prompts
-	prefs.put("safebrowsing.enabled", true); // Disable safety warnings for downloads
-
-	}
-
-
-*/
 
 
 		@After
@@ -61,7 +37,8 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	@Before
 	public void setUp() {
 		// Configure download preferences for Chrome
-		String downloadFilepath = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles";
+		String downloadFilepath = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\NTT\\downloadFiles";
+
 		Map<String, Object> prefs = new HashMap<>();
 		prefs.put("download.default_directory", downloadFilepath);
 		prefs.put("download.prompt_for_download", false); // Disable download prompts

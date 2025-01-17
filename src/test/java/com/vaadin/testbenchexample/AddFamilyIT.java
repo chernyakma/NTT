@@ -42,7 +42,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		AddFamilyView family = $( AddFamilyView.class ).first();
 		family.addFamily(  );
 		family.getSuffix().selectItemByIndex( 1 );
-		family.getGender().selectItemByIndex( 0 );
+		family.getGender().selectItemByIndex( 1 );
 		family.getDateOfBirth().setDate( LocalDate.of( 1960, 10, 15 ) );
 		family.getTobaccoUse().selectByText( "Tobacco" );
 	    family.getMarriageStatus().selectItemByIndex( 1 );
@@ -73,7 +73,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		family.getRelationship().selectByText( "Spouse" );
 		family.addSpouse(  );
 		family.getSuffix().selectItemByIndex( 2 );
-		family.getGender().selectItemByIndex( 1 );
+		family.getGender().selectItemByIndex( 0 );
 		family.getDateOfBirth().setDate( LocalDate.of( 1965, 01, 05 ) );
 		family.getNonTobacco().doubleClick();
 		family.getMarriageStatus().selectItemByIndex( 1 );
@@ -113,7 +113,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		family.getRelationship().selectByText( "Spouse" );
 		family.addSpouse(  );
 		family.getSuffix().selectItemByIndex( 2 );
-		family.getGender().selectItemByIndex( 1 );
+		family.getGender().selectItemByIndex( 0 );
 		family.getDateOfBirth().setDate( LocalDate.of( 1970, 01, 05 ) );
 		family.getNonTobacco().doubleClick();
 		family.getMarriageStatus().selectItemByIndex( 1 );
@@ -183,22 +183,28 @@ public class AddFamilyIT extends BaseLoginTest {
 	setAddress.getCountry().selectByText( "USA" );
 	setAddress.address( "74 River Street","25 Main Street","Norfolk","23503" );
 	setAddress.getState().selectByText( "Virginia" );
-	setAddress.getAddressType().selectItemByIndex( 1 );
-	Assertions.assertEquals( "Residence",setAddress.getAddressType().getSelectedText() );
-	setAddress.getDefaultMailing().click();
+	setAddress.getAddressType().selectItemByIndex( 2 );
+	Assertions.assertEquals( "Mailing",setAddress.getAddressType().getSelectedText() );
+//	setAddress.getDefaultMailing().click();
 //	setAddress.getDefaultBilling().click();
-//	setAddress.getDefaultResidence().click();
+	setAddress.getDefaultResidence().click();
 	Assertions.assertEquals( "Virginia", setAddress.getState().getSelectedText());
 	Assertions.assertEquals( "74 River Street", setAddress.getLine1().getValue());
 	Assertions.assertEquals( "25 Main Street", setAddress.getLine2().getValue());
-	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );
+//	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );
 //	Assertions.assertTrue( setAddress.getDefaultBilling().isChecked() );
-//	Assertions.assertTrue( setAddress.getDefaultResidence().isChecked() );
+	Assertions.assertTrue( setAddress.getDefaultResidence().isChecked() );
 	setAddress.getOkButton().click();
 	addAddress.getSaveButton().click();
-//	addAddress.getDeleteButton().click();
-//	addAddress.getSaveButton().click();
 
+//	EntryDialogContent ok = $(EntryDialogContent.class).first();
+//	waitUntil(driver -> ok.okButton().isDisplayed(), 80);
+//	ok.okButton().click();
+	addAddress.getDeleteButton().click();
+	addAddress.getSaveButton().click();
+//	EntryDialogContent confirm = $(EntryDialogContent.class).first();
+//	waitUntil(driver -> confirm.okButton().isDisplayed(), 80);
+//	confirm.okButton().click();
 
 }
 	@Test
