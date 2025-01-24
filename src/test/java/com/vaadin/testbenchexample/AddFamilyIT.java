@@ -273,9 +273,10 @@ public class AddFamilyIT extends BaseLoginTest {
 		family.getFamily().click();
 		ScenarioView getBeneficiary = $(ScenarioView.class).first();
 		Assertions.assertTrue(getBeneficiary.family().getCell("Potter").isDisplayed());
-		getBeneficiary.getDeleteFamilyBeneButton().click();
-		VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
-		delete.getSaveButton().click();
+
+	//	getBeneficiary.getDeleteFamilyBeneButton().click();
+	//	VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
+	//	delete.getSaveButton().click();
 		getBeneficiary.policyNumber().getCell("05W1E05624").click();
 		family.beneficiaries().click();
 		ScenarioView deleteBene =$(ScenarioView.class).first();
@@ -284,6 +285,15 @@ public class AddFamilyIT extends BaseLoginTest {
 		Thread.sleep( 3_000 );
 		VaadinConfirmDialogView ok = $ (VaadinConfirmDialogView.class).first();
 		ok.getDeleteButton().click();
+
+		NaviMenuView getFamily = $( NaviMenuView.class ).first();
+		getFamily.getFamily().click();
+		ScenarioView deleteBeneficiary = $(ScenarioView.class).first();
+		deleteBeneficiary.getDeleteFamilyBeneButton().click();
+		VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
+		delete.getSaveButton().click();
+
+
 	}
 
 
