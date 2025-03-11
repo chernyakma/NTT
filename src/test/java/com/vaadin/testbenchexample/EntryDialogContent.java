@@ -1,4 +1,5 @@
 package com.vaadin.testbenchexample;
+import com.vaadin.flow.component.checkbox.testbench.CheckboxElement;
 import com.vaadin.flow.component.radiobutton.testbench.RadioButtonGroupElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -135,6 +136,22 @@ public class EntryDialogContent extends TestBenchElement {
 	}
 	protected TextFieldElement faceAmount(){
 		return $ (TestBenchElement.class).id( "BenefitsChangeSection" ).$( TextFieldElement.class).id( "FaceAmount" );
+	}
+	protected CheckboxElement selectAll(){
+		return $ (TestBenchElement.class).id( "ProfilesSection" ).$( CheckboxElement.class).first();
+	}
+
+	protected ButtonElement editComProfilies1(){
+		return $ (TestBenchElement.class).id("ProfilesSection").$(TestBenchElement.class).id("CoverageCommissionProfileTable").$(ButtonElement.class).get(1);
+	}
+	protected ButtonElement editComProfilies2(){
+		return $ (TestBenchElement.class).id("ProfilesSection").$(TestBenchElement.class).id("CoverageCommissionProfileTable").$(ButtonElement.class).get(4);
+	}
+	protected ButtonElement editComProfilies3(){
+		return $ (TestBenchElement.class).id("ProfilesSection").$(TestBenchElement.class).id("CoverageCommissionProfileTable").$(ButtonElement.class).get(7);
+	}
+	protected SelectElement agentLevel(){
+		return $ (TestBenchElement.class).id("CoverageLevelAgentManagement").$(SelectElement.class).id("AgentNumberLevel");
 	}
 
 	//Beneficiary

@@ -168,6 +168,23 @@ public class WholeLifeIT extends BaseLoginTest {
 		addRider.coverageName().selectItemByIndex( 0);
 		addRider.faceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "5000" );
 		Assertions.assertEquals("5000",addRider.faceAmount().getValue());
+		addRider.selectAll().click();
+		addRider.editComProfilies1().click();
+		EntryDialogContent editProfile= $(EntryDialogContent.class).last();
+		editProfile.agentLevel().selectByText("Level 1");
+		editProfile.okButton().click();
+		EntryDialogContent profile= $(EntryDialogContent.class).first();
+		profile.editComProfilies2().click();
+		EntryDialogContent editProfile2= $(EntryDialogContent.class).last();
+		editProfile2.agentLevel().selectByText("Servicing Agent");
+		editProfile2.okButton().click();
+		EntryDialogContent profile2= $(EntryDialogContent.class).first();
+		profile2.editComProfilies3().click();
+		EntryDialogContent editProfile3= $(EntryDialogContent.class).last();
+		editProfile3.agentLevel().selectByText("Level 2");
+		editProfile3.okButton().click();
+
+
 		TransactionPopUpPageView notes = $(TransactionPopUpPageView.class).first();
 		notes.note().sendKeys( "123" );
 		addRider.okButton().click();
@@ -178,7 +195,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 60);
 
-		Assertions.assertEquals( "$1,727.00",transactionsPage.modalPremium().getText() );
+		Assertions.assertEquals( "$1,757.00",transactionsPage.modalPremium().getText() );
 
 /*		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		transactionsPage.viewLoanTransactionButton().click();
