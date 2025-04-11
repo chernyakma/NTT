@@ -1,5 +1,6 @@
 package com.vaadin.testbenchexample;
 import com.vaadin.flow.component.checkbox.testbench.CheckboxElement;
+import com.vaadin.flow.component.listbox.testbench.ListBoxElement;
 import com.vaadin.flow.component.radiobutton.testbench.RadioButtonGroupElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -153,6 +154,35 @@ public class EntryDialogContent extends TestBenchElement {
 	protected SelectElement agentLevel(){
 		return $ (TestBenchElement.class).id("CoverageLevelAgentManagement").$(SelectElement.class).id("AgentNumberLevel");
 	}
+	//owner
+	protected ListBoxElement relationshipPfix(){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("RelationshipType").$(ListBoxElement.class).first();
+	}
+	protected SelectElement relationship(){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("RelationshipType");
+	}
+
+	//Other Roles
+	protected ListBoxElement roleType(){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("RoleType").$(ListBoxElement.class).first();
+	}
+	protected SelectElement roleTypeAccept(){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("RoleType");
+	}
+	protected ListBoxElement relation(){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("RelationToPrimaryInsured").$(ListBoxElement.class).first();
+	}
+	protected SelectElement relationAccept(){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(SelectElement.class).id("RelationToPrimaryInsured");
+	}
+	protected DatePickerElement effectiveDate (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(DatePickerElement.class).id("EffectiveDate");
+	}
+
+	protected DatePickerElement endDate (){
+		return $(TestBenchElement.class).id("FldSec_1" ).$(DatePickerElement.class).id("EndDate");
+	}
+
 
 	//Beneficiary
 	protected SelectElement selectBene (){

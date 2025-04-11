@@ -102,4 +102,20 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 5 );
 	}
+	protected TestBenchElement payorAndOwnerPfix() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$("IRON-ICON").get( 4 );
+	}
+	protected TestBenchElement payorAndOwner() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 16 );
+	}
+	protected TestBenchElement otherRolesPfix() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$("IRON-ICON").get( 10 );
+	}
+	protected TestBenchElement otherRoles() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 26 );
+	}
 }

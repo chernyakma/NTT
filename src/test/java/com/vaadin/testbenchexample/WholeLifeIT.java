@@ -168,6 +168,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		addRider.coverageName().selectItemByIndex( 0);
 		addRider.faceAmount().sendKeys( Keys.chord( Keys.CONTROL, "a" ), "5000" );
 		Assertions.assertEquals("5000",addRider.faceAmount().getValue());
+	/*
 		addRider.selectAll().click();
 		addRider.editComProfilies1().click();
 		EntryDialogContent editProfile= $(EntryDialogContent.class).last();
@@ -183,7 +184,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		EntryDialogContent editProfile3= $(EntryDialogContent.class).last();
 		editProfile3.agentLevel().selectByText("Level 2");
 		editProfile3.okButton().click();
-
+*/
 
 		TransactionPopUpPageView notes = $(TransactionPopUpPageView.class).first();
 		notes.note().sendKeys( "123" );

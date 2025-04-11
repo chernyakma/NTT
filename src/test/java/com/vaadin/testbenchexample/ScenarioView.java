@@ -1,5 +1,7 @@
 package com.vaadin.testbenchexample;
 import com.vaadin.flow.component.grid.CellFocusEvent;
+import com.vaadin.flow.component.listbox.testbench.ListBoxElement;
+import com.vaadin.flow.component.select.testbench.SelectElement;
 import com.vaadin.flow.component.tabs.testbench.TabElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -64,9 +66,36 @@ public class ScenarioView extends TestBenchElement {
 
 		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("family-member-page").first().$(TestBenchElement.class).id("membersDiv").$(TestBenchElement.class).id("Members").$(TestBenchElement.class).id("section").$("search-component").first().$(ButtonElement.class).get(5);
 	}
+	protected ButtonElement getDeleteRoleButton() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("saveable-page").first().$(TestBenchElement.class).id("S0").$(TestBenchElement.class).id("RoleTable").$(TestBenchElement.class).id("grid").$(ButtonElement.class).get(2);
+	}
+
+
+	protected ButtonElement getDeleteFamilyBeneButtonAccept() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("family-member-page").first().$(TestBenchElement.class).id("membersDiv").$(TestBenchElement.class).id("Members").$(TestBenchElement.class).id("section").$("search-component").first().$(ButtonElement.class).get(5);
+	}
+	protected ButtonElement getDeleteFamilyOwner() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("family-member-page").first().$(TestBenchElement.class).id("membersDiv").$(TestBenchElement.class).id("Members").$(TestBenchElement.class).id("section").$("search-component").first().$(ButtonElement.class).get(3);
+	}
+	protected ButtonElement getDeleteFamilyOther() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("family-member-page").first().$(TestBenchElement.class).id("membersDiv").$(TestBenchElement.class).id("Members").$(TestBenchElement.class).id("section").$("search-component").first().$(ButtonElement.class).get(4);
+	}
+	protected ButtonElement getDeleteFamilyOtherAccept() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("family-member-page").first().$(TestBenchElement.class).id("membersDiv").$(TestBenchElement.class).id("Members").$(TestBenchElement.class).id("section").$("search-component").first().$(ButtonElement.class).get(3);
+	}
 		protected ButtonElement addMemberButton() {
 
 		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "family-member-page" ).first().$( TestBenchElement.class ).id( "Members" ).$( ButtonElement.class ).first();
+	}
+	protected ButtonElement getAddOtherRolesButton() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("saveable-page").first().$(TestBenchElement.class).id("S0").$(TestBenchElement.class).id("RoleTable").$(ButtonElement.class).first();
+
 	}
 	protected ButtonElement getAddBeneButton() {
 
@@ -149,8 +178,16 @@ public class ScenarioView extends TestBenchElement {
 	protected GridElement family (){
 		return $( TestBenchElement.class ).id( "viewContent" ).$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "family-member-page" ).first().$( TestBenchElement.class ).id( "membersDiv" ).$( TestBenchElement.class ).id( "Members" ).$( TestBenchElement.class ).id( "section" ).$( "search-component" ).first().$(GridElement.class).first();
 	}
+	protected ButtonElement newOwner(){
+		return $(TestBenchElement.class).id("viewContent").$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "saveable-page" ).first().$( TestBenchElement.class ).id( "OwnerSection" ).$( TestBenchElement.class ).id( "OwnerDialog" ).$(ButtonElement.class).first();
+	}
 
-
+	protected ListBoxElement ownerGUIDPfix(){
+		return $(TestBenchElement.class).id("viewContent").$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "saveable-page" ).first().$( TestBenchElement.class ).id( "OwnerSection" ).$(SelectElement.class).id("OwnerGUID").$(ListBoxElement.class).first();
+	}
+	protected SelectElement ownerGUID(){
+		return $(TestBenchElement.class).id("viewContent").$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "saveable-page" ).first().$( TestBenchElement.class ).id( "OwnerSection" ).$(SelectElement.class).id("OwnerGUID");
+	}
 }
 
 
