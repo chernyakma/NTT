@@ -16,6 +16,11 @@ import com.vaadin.testbench.elementsbase.Element;
 //@Attribute(name="class",value="navi-item page-item")
 public class NaviMenuView extends TestBenchElement {
 
+
+
+	// Main
+
+
 	protected TestBenchElement getAddresses() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 5 );
@@ -24,31 +29,10 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).first();
 	}
-
 	protected TestBenchElement getSuspense() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 25 );
 	}
-	protected TestBenchElement getApplication() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 1 );
-	}
-
-	protected TestBenchElement getDocument() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 18 );
-	}
-
-	protected TestBenchElement beneficiaries() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 21 );
-	}
-//SPDA
-	protected TestBenchElement getDocumentSPDA() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 13 );
-	}
-
 	protected TestBenchElement getNewBusiness() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 30 );
@@ -64,26 +48,41 @@ public class NaviMenuView extends TestBenchElement {
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).last();
 	}
 
+
+	// Policy
+
+	protected TestBenchElement getApplication() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 1 );
+	}
+	protected TestBenchElement getDocument() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 18 );
+	}
+	protected TestBenchElement beneficiaries() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 21 );
+	}
+
 	protected TestBenchElement checkIGO() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 25 );
-	}
-	//SPDA
-	protected TestBenchElement checkSpdaIGO() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 20 );
-	}
-	protected TestBenchElement suspenseSpda() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 18 );
 	}
 
 	protected TestBenchElement suspense() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 33 );
 	}
+	protected TestBenchElement getReport() {
 
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 7 );
+	}
+	protected TestBenchElement getResult() {
 
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 5 );
+	}
+
+	// Transactions
 
 	protected TestBenchElement transactionsWL() {
 
@@ -93,15 +92,13 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 12 );
 	}
+	protected TestBenchElement policyTransactions() {
 
-	protected TestBenchElement getReport() {
-
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 7 );
+		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 15 );
 	}
-	protected TestBenchElement getResult() {
 
-		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 5 );
-	}
+	// Owner
+
 	protected TestBenchElement payorAndOwnerPfix() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$("IRON-ICON").get( 4 );
@@ -110,6 +107,9 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 16 );
 	}
+
+	// OtherRoles
+
 	protected TestBenchElement otherRolesPfix() {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$("IRON-ICON").get( 10 );

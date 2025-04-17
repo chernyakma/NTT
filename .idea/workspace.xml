@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/EntryDialogContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/EntryDialogContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/NaviMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/NaviMenuView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ScenarioView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ScenarioView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/NTTestdata.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/NTTestdata.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,10 @@
     &quot;JUnit.UniversalLifeIT.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.WholeLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.WholeLifeIT.addRider.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.addSuspense.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.WholeLifeIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.payDirectBill.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.payEFT.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.WholeLifeIT.suspense.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.WholeLifeIT.verifyScreenshotFile.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -86,8 +87,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WholeLifeIT">
-    <configuration name="AddFamilyIT.addBeneficiary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WholeLifeIT.payDirectBill">
+    <configuration name="UniversalLifeIT.addSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -96,8 +97,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
-      <option name="METHOD_NAME" value="addBeneficiary" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.UniversalLifeIT" />
+      <option name="METHOD_NAME" value="addSuspense" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WholeLifeIT.addLoan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WholeLifeIT.addSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -128,13 +129,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="METHOD_NAME" value="addLoan" />
+      <option name="METHOD_NAME" value="addSuspense" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WholeLifeIT.addRider" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WholeLifeIT.payDirectBill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -144,13 +145,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="METHOD_NAME" value="addRider" />
+      <option name="METHOD_NAME" value="payDirectBill" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WholeLifeIT.suspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WholeLifeIT.payEFT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -160,7 +161,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="METHOD_NAME" value="suspense" />
+      <option name="METHOD_NAME" value="payEFT" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WholeLifeIT.payDirectBill" />
+        <item itemvalue="JUnit.WholeLifeIT.addSuspense" />
         <item itemvalue="JUnit.WholeLifeIT" />
-        <item itemvalue="JUnit.WholeLifeIT.addRider" />
-        <item itemvalue="JUnit.WholeLifeIT.addLoan" />
-        <item itemvalue="JUnit.WholeLifeIT.suspense" />
-        <item itemvalue="JUnit.AddFamilyIT.addBeneficiary" />
+        <item itemvalue="JUnit.WholeLifeIT.payEFT" />
+        <item itemvalue="JUnit.UniversalLifeIT.addSuspense" />
       </list>
     </recent_temporary>
   </component>
