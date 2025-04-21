@@ -37,7 +37,6 @@ public class AddFamilyIT extends BaseLoginTest {
 	public void addFamily() {
 
 	//	getDriver().get( "http://localhost:8080/everlake_webui_war/familyInsured" );
-	//	getDriver().get( "http://" + IPAddress.findSiteLocalAddress() + ":8080/navy_webui/familyInsured");
 		getDriver().get( "https://test.everlake.calcfocus.net/achieve/familyInsured/" );
 		AddFamilyView family = $( AddFamilyView.class ).first();
 		family.addFamily(  );
@@ -199,17 +198,6 @@ public class AddFamilyIT extends BaseLoginTest {
 		setAddress.getEditOkButton().click();
 		ScenarioView address = $(ScenarioView.class).first();
 		address.getSaveButton().click();
-//	setAddress.getOkButton().click();
-//	addAddress.getSaveButton().click();
-
-//	EntryDialogContent ok = $(EntryDialogContent.class).first();
-//	waitUntil(driver -> ok.okButton().isDisplayed(), 80);
-//	ok.okButton().click();
-//	addAddress.getDeleteButton().click();
-//	addAddress.getSaveButton().click();
-//	EntryDialogContent confirm = $(EntryDialogContent.class).first();
-//	waitUntil(driver -> confirm.okButton().isDisplayed(), 80);
-//	confirm.okButton().click();
 
 }
 	@Test
@@ -278,10 +266,6 @@ public class AddFamilyIT extends BaseLoginTest {
 		family.getFamily().click();
 		ScenarioView getBeneficiary = $(ScenarioView.class).first();
 		Assertions.assertTrue(getBeneficiary.family().getCell("Potter").isDisplayed());
-
-	//	getBeneficiary.getDeleteFamilyBeneButton().click();
-	//	VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
-	//	delete.getSaveButton().click();
 		getBeneficiary.policyNumber().getCell("05W1038628").click();
 		family.beneficiaries().click();
 		ScenarioView deleteBene =$(ScenarioView.class).first();

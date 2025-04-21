@@ -51,9 +51,6 @@ public class WholeLifeIT extends BaseLoginTest {
 		checkSuspence.transferSuspenceButton().click();
 		EntryDialogContent transferSuspence = $(EntryDialogContent.class).first();
 		transferSuspence.fromAccount().selectByText( "POLICY SUSPENSE" );
-		//	EntryDialogContent transferSuspenceTo = $(EntryDialogContent.class).first();
-		//	transferSuspence.note().sendKeys( "123" );
-		//	transferSuspence.toAccount().focus();
 		transferSuspence.toAccount().selectByText( "Policy" );
 		transferSuspence.searchFamily().sendKeys( "05W1E00518" );
 		transferSuspence.search().doubleClick();
@@ -69,28 +66,7 @@ public class WholeLifeIT extends BaseLoginTest {
 
 
 	}
-/*	@Test
-	public void addSuspense() throws InterruptedException {
-		VaadinSelectView getSelectButton = $(VaadinSelectView.class).first();
-		getSelectButton.getSelectItem().selectItemByIndex(4);
-		SearchComponentView getPolicy = $(SearchComponentView.class).first();
-		getPolicy.searchByPolicy().sendKeys("05W1055443");
-		getPolicy.searchButton().click();
-		getPolicy.family().getCell("05W1055443").click();
-		NaviMenuView addSuspense = $(NaviMenuView.class).first();
-		addSuspense.suspense().click();
-		ScenarioView addSuspenseButton = $(ScenarioView.class).first();
-		addSuspenseButton.addSuspenceButton().click();
-		EntryDialogContent suspenseSource = $(EntryDialogContent.class).first();
-		suspenseSource.suspenseAmount().sendKeys("81.07");
-		Assertions.assertEquals("81.07", suspenseSource.suspenseAmount().getValue());
-		suspenseSource.suspenseSource().selectByText("Credit Card");
-		Assertions.assertEquals("Credit Card", suspenseSource.suspenseSource().getSelectedText());
-		suspenseSource.depositAccount().selectByText("POLICY SUSPENSE");
-		suspenseSource.processButton().click();
-	}
 
- */
 	@Test
 	public void addLoan() throws InterruptedException, IOException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
@@ -117,49 +93,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		confirm.getSaveButton().click();
 		ScenarioView transactionsPage = $(ScenarioView.class).first();
 		waitUntil(driver -> !transactionsPage.progressBar().isDisplayed(), 80);
-     /*   transactionsPage.viewLoanTransactionButton().click();
-		Thread.sleep( 5_000 );
-		System.err.println("Screenshot Directory: " + Parameters.getScreenshotReferenceDirectory());
-
-		try {
-			System.err.println("Starting addLoan test...");
-
-
-
-			File referenceScreenshot = ImageFileUtil.getReferenceScreenshotFile("Screenshot 2024-05-31 165801.png");
-			System.err.println("Reference screenshot path: " + referenceScreenshot.getAbsolutePath());
-			System.err.println("Reference screenshot exists: " + referenceScreenshot.exists());
-
-			boolean comparisonResult = testBench().compareScreen(referenceScreenshot);
-			System.err.println("Screenshot comparison result: " + comparisonResult);
-
-			Assert.assertTrue("Screenshot comparison failed", comparisonResult);
-		} catch (Exception e) {
-			System.err.println("An error occurred: " + e.getMessage());
-			e.printStackTrace(System.err);
-
-			// Create error-screenshots directory if it doesn't exist
-			File errorScreenshotDir = new File("error-screenshots");
-			if (!errorScreenshotDir.exists()) {
-				errorScreenshotDir.mkdirs();
-			}
-
-			// Save a failure screenshot with a timestamp
-			String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-			File actualScreenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			File destination = new File("error-screenshots/failure-" + timestamp + "-Screenshot-2024-05-31-165801.png");
-			FileUtils.copyFile(actualScreenshot, destination);
-			System.err.println("Failure screenshot saved to: " + destination.getAbsolutePath());
-
-			throw e; // Re-throw to fail the test
-		}
-
-
-		TransactionViewPage transactionPage = $(TransactionViewPage.class).first();
-		transactionPage.cancel().click();
-
-      */
-		NaviMenuView policy = $(NaviMenuView.class).first();
+     	NaviMenuView policy = $(NaviMenuView.class).first();
 		policy.getPolicy().click();
 		ScenarioView policyPage = $(ScenarioView.class).first();
 		Assertions.assertEquals( "1,000.00",policyPage.loanBalance().getValue() );
@@ -316,10 +250,6 @@ public class WholeLifeIT extends BaseLoginTest {
 		String originalDateText = payPremium.policyPaidToDate().getText();
 		initialPaidToDate = parseFlexibleDate(originalDateText);
 
-		//  Use flexible parser for input field too
-		//      String currentDateString = payPremium.date().getInputValue();
-		//       LocalDate currentDate = parseFlexibleDate(currentDateString);
-		//       LocalDate newDate = currentDate.plusMonths(1);
 		LocalDate originalDate = parseFlexibleDate(originalDateText);
 		LocalDate newDate = originalDate.plusDays(1);
 		payPremium.date().setDate(newDate);
@@ -329,8 +259,6 @@ public class WholeLifeIT extends BaseLoginTest {
 		cycleUp.getSaveButton().click();
 		waitUntil(driver -> !payPremium.progressBar().isDisplayed(), 80);
 		String updatedText = payPremium.policyPaidToDate().getText();
-//        System.out.println("Raw date string: '" + dateString + "'");
-
 		LocalDate updatedDate = LocalDate.parse(updatedText, formatter);
 
 		Assertions.assertEquals(initialPaidToDate.plusMonths(1), updatedDate);

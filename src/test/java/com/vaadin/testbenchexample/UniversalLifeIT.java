@@ -35,15 +35,27 @@ public class UniversalLifeIT extends BaseLoginTest {
 		Assertions.assertEquals( "Credit Card",suspenseSource.suspenseSource().getSelectedText() );
 		suspenseSource.depositAccount().selectByText( "POLICY SUSPENSE" );
 		suspenseSource.processButton().click();
-	//	ScenarioView checkSuspence=$(ScenarioView.class).first();
-	//	Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
+		NaviMenuView transactions = $(NaviMenuView.class).first();
+		transactions.transactionsWL().click();
+		ScenarioView deleteTransaction = $(ScenarioView.class).first();
+		deleteTransaction.reverseLoanTransactionButton().click();
+		Thread.sleep( 5_000 );
+		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
+		ok.getSaveButton().click();
+		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
+		ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
+		deleteLoanTransaction.deleteLoanTransactionButton().click();
+		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
+		confirmation.getSaveButton().click();
+
+		//	ScenarioView checkSuspence=$(ScenarioView.class).first();
+	//	Assertions.assertEquals( "$57",checkSuspence.suspenceBalance().getText() );
 /*
 		checkSuspence.transferSuspenceButton().click();
 		EntryDialogContent transferSuspence = $(EntryDialogContent.class).first();
 		transferSuspence.fromAccount().selectByText( "General" );
 	//	EntryDialogContent transferSuspenceTo = $(EntryDialogContent.class).first();
 	//	transferSuspence.note().sendKeys( "123" );
-	//	transferSuspence.toAccount().focus();
 		transferSuspence.toAccount().selectByText( "Family" );
 		transferSuspence.searchFamily().sendKeys( "Palmer" );
 		transferSuspence.search().doubleClick();

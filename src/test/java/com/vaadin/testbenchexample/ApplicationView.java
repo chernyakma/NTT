@@ -99,27 +99,26 @@ public class ApplicationView extends TestBenchElement {
 		getCaseNumber().sendKeys( String.valueOf( randomNumber ) );
 	}
 
-	public void compareAndDeleteDownloadedPdfSPIA() throws Exception {
+	public void compareAndDeleteDownloadedPdf() throws Exception {
 
 		String downloadDir = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles";
 		String fileName = "NewBusiness.pdf";
 		File downloadedFile = new File(downloadDir + "\\" + fileName);
 
-		File referenceFile = new File("C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles\\ReferenceIllusSPIA.pdf");
-	//	File referenceFile = new File("C:\\Users\\MariiaCherniak\\Downloads\\Change Management Request -  CM400.pdf");
+		File referenceFile = new File("C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles\\ReferenceIllus.pdf");
 		boolean testPassed = false;
 		try {
 		boolean result = PdfComparator.comparePdfTextIgnoringDates( downloadedFile,referenceFile);
-			// Assert or log the result
+
 			Assert.assertTrue( "PDFs do not match!", result);
 			System.out.println("The PDFs match (ignoring dates).");
 
-			// If the assertion passes, mark test as passed
+
 			testPassed = true;
 		} catch (AssertionError | Exception e) {
 			System.err.println("Test failed: " + e.getMessage());
 		} finally {
-			// Delete the file only if the test passed
+
 			if (testPassed && downloadedFile.exists()) {
 				boolean isDeleted = downloadedFile.delete();
 				if (isDeleted) {
@@ -132,39 +131,4 @@ public class ApplicationView extends TestBenchElement {
 			}
 		}
 		}
-
-	public void compareAndDeleteDownloadedPdfSPDA() throws Exception {
-
-		String downloadDir = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles";
-		String fileName = "NewBusiness.pdf";
-		File downloadedFile = new File(downloadDir + "\\" + fileName);
-
-		File referenceFile = new File("C:\\Users\\MariiaCherniak\\Documents\\GitHub\\new\\downloadFiles\\ReferenceIllusSPDA.pdf");
-		//	File referenceFile = new File("C:\\Users\\MariiaCherniak\\Downloads\\Change Management Request -  CM400.pdf");
-		boolean testPassed = false;
-		try {
-			boolean result = PdfComparator.comparePdfTextIgnoringDates( downloadedFile,referenceFile);
-			// Assert or log the result
-			Assert.assertTrue( "PDFs do not match!", result);
-			System.out.println("The PDFs match (ignoring dates).");
-
-			// If the assertion passes, mark test as passed
-			testPassed = true;
-		} catch (AssertionError | Exception e) {
-			System.err.println("Test failed: " + e.getMessage());
-		} finally {
-			// Delete the file only if the test passed
-			if (testPassed && downloadedFile.exists()) {
-				boolean isDeleted = downloadedFile.delete();
-				if (isDeleted) {
-					System.out.println("Downloaded file was successfully deleted.");
-				} else {
-					System.out.println("Failed to delete the downloaded file.");
-				}
-			} else if (!testPassed) {
-				System.out.println("Test failed. File not deleted.");
-			}
-		}
-	}
-
 	}

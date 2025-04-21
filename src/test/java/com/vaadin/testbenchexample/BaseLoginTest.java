@@ -36,7 +36,7 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 
 	@Before
 	public void setUp() {
-		// Configure download preferences for Chrome
+
 		String downloadFilepath = "C:\\Users\\MariiaCherniak\\Documents\\GitHub\\NTT\\downloadFiles";
 
 		Map<String, Object> prefs = new HashMap<>();
@@ -44,18 +44,18 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 		prefs.put("download.prompt_for_download", false); // Disable download prompts
 		prefs.put("safebrowsing.enabled", true); // Disable safety warnings for downloads
 
-		// Set Chrome options
+
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless", "--disable-gpu");
 		options.setExperimentalOption("prefs", prefs);
 		WebDriverManager.chromedriver().setup();
-//		WebDriver driver = new ChromeDriver();
+
 
 
 
 
 		setDriver(new ChromeDriver(options));
-		// Perform login or other initial setup
+
 		performLogin();
 
 		// Set TestBench parameters for screenshot comparison
@@ -78,13 +78,12 @@ public abstract class BaseLoginTest extends TestBenchTestCase {
 	// Your login method
 
 	private void performLogin() {
-	//	getDriver().get("http://localhost:8080/everlake_webui_war/");
-	//	getDriver().get( "http://" + IPAddress.findSiteLocalAddress() + ":8080/navy_webui/");
-
-
-	//	$( TextFieldElement.class).first().setValue( "jBond");
-	//	$( PasswordFieldElement.class).first().setValue( "JBond007");
-	//	$( ButtonElement.class).first().click();
+	/*
+		getDriver().get("http://localhost:8080/everlake_webui_war/");
+		$( TextFieldElement.class).first().setValue( "jBond");
+		$( PasswordFieldElement.class).first().setValue( "JBond007");
+		$( ButtonElement.class).first().click();
+	*/
 		getDriver().get("https://test.everlake.calcfocus.net/achieve/oauth2/login/code/cognito");
 
 		WebElement usernameFieldElement = findElement( By.id( "signInFormUsername" ));
