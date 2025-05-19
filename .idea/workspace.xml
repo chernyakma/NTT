@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,37 +52,38 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.AddFamilyIT.addBank.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.addBeneficiary.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.addFamily.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.addFamilyMemberFromPolicy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.addNewOwner.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.addOtherRoles.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.addSpouse.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.editAddress.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddFamilyIT.familyAddress.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniversalLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniversalLifeIT.addSuspense.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniversalLifeIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.addRider.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.addSuspense.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.payDirectBill.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.payEFT.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.suspense.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WholeLifeIT.verifyScreenshotFile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MariiaCherniak/Documents/GitHub/Unum&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AddFamilyIT.addBank.executor": "Run",
+    "JUnit.AddFamilyIT.addBeneficiary.executor": "Run",
+    "JUnit.AddFamilyIT.addFamily.executor": "Run",
+    "JUnit.AddFamilyIT.addFamilyMemberFromPolicy.executor": "Run",
+    "JUnit.AddFamilyIT.addNewOwner.executor": "Run",
+    "JUnit.AddFamilyIT.addOtherRoles.executor": "Run",
+    "JUnit.AddFamilyIT.addSpouse.executor": "Run",
+    "JUnit.AddFamilyIT.editAddress.executor": "Run",
+    "JUnit.AddFamilyIT.executor": "Run",
+    "JUnit.AddFamilyIT.familyAddress.executor": "Run",
+    "JUnit.UniversalLifeIT.addLoan.executor": "Run",
+    "JUnit.UniversalLifeIT.addSuspense.executor": "Run",
+    "JUnit.UniversalLifeIT.executor": "Run",
+    "JUnit.WholeLifeIT.addLoan.executor": "Run",
+    "JUnit.WholeLifeIT.addRider.executor": "Run",
+    "JUnit.WholeLifeIT.addSuspense.executor": "Run",
+    "JUnit.WholeLifeIT.executor": "Run",
+    "JUnit.WholeLifeIT.payDirectBill.executor": "Run",
+    "JUnit.WholeLifeIT.payEFT.executor": "Run",
+    "JUnit.WholeLifeIT.suspense.executor": "Run",
+    "JUnit.WholeLifeIT.transferSuspense.executor": "Run",
+    "JUnit.WholeLifeIT.verifyScreenshotFile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MariiaCherniak/Documents/GitHub/Unum",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.AddFamilyIT.addBank">
+}]]></component>
+  <component name="RunManager" selected="JUnit.WholeLifeIT.transferSuspense">
     <configuration name="AddFamilyIT.addBank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -111,21 +112,6 @@
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
       <option name="METHOD_NAME" value="addBeneficiary" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UniversalLifeIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.UniversalLifeIT" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,13 +148,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WholeLifeIT.transferSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
+      <option name="METHOD_NAME" value="transferSuspense" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WholeLifeIT.transferSuspense" />
         <item itemvalue="JUnit.AddFamilyIT.addBank" />
         <item itemvalue="JUnit.UniversalLifeIT.addSuspense" />
         <item itemvalue="JUnit.UniversalLifeIT.addLoan" />
         <item itemvalue="JUnit.AddFamilyIT.addBeneficiary" />
-        <item itemvalue="JUnit.UniversalLifeIT" />
       </list>
     </recent_temporary>
   </component>
