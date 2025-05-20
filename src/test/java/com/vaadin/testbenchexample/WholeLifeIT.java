@@ -46,6 +46,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		Assertions.assertEquals( "Credit Card",suspenseSource.suspenseSource().getSelectedText() );
 		suspenseSource.depositAccount().selectByText( "POLICY SUSPENSE" );
 		suspenseSource.processButton().click();
+
 		ScenarioView checkSuspence=$(ScenarioView.class).first();
 //				Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
 
@@ -64,7 +65,21 @@ public class WholeLifeIT extends BaseLoginTest {
 		transferSuspence.okButton().click();
 		ScenarioView suspenceAmount=$(ScenarioView.class).first();
 //		Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
-
+		NaviMenuView transactions = $(NaviMenuView.class).first();
+		transactions.transactions().click();
+		ScenarioView deleteTransaction = $(ScenarioView.class).first();
+		deleteTransaction.reverseSecondTransactionButton().click();
+		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
+		ok.getSaveButton().click();
+		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
+		ScenarioView removeTransaction = $(ScenarioView.class).first();
+		removeTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
+		confirmation.getSaveButton().click();
+		ScenarioView removeSecondTransaction = $(ScenarioView.class).first();
+		removeSecondTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
+		confirm.getSaveButton().click();
 
 	}
 
