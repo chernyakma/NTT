@@ -81,7 +81,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WholeLifeIT.transferSuspense">
+  <component name="RunManager" selected="JUnit.AddFamilyIT.addBank">
     <configuration name="AddFamilyIT.addBank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -164,10 +164,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddFamilyIT.addBank" />
         <item itemvalue="JUnit.WholeLifeIT.transferSuspense" />
         <item itemvalue="JUnit.WholeLifeIT.addRider" />
         <item itemvalue="JUnit.UniversalLifeIT.addSuspense" />
-        <item itemvalue="JUnit.AddFamilyIT.addBank" />
         <item itemvalue="JUnit.UniversalLifeIT.addLoan" />
       </list>
     </recent_temporary>
