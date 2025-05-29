@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="" />
+    <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/UniversalLifeIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/NTTestdata.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/NTTestdata.xlsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,8 +86,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AddFamilyIT.addBank">
-    <configuration name="AddFamilyIT.addBank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UniversalLifeIT.addLoan">
+    <configuration name="AddFamilyIT.addFamily" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -92,7 +97,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
-      <option name="METHOD_NAME" value="addBank" />
+      <option name="METHOD_NAME" value="addFamily" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddFamilyIT.addNewOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addNewOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddFamilyIT.familyAddress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="familyAddress" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,23 +151,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UniversalLifeIT.addSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.UniversalLifeIT" />
-      <option name="METHOD_NAME" value="addSuspense" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WholeLifeIT.addRider" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WholeLifeIT.payDirectBill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
         <pattern>
@@ -140,23 +161,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="METHOD_NAME" value="addRider" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WholeLifeIT.transferSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="METHOD_NAME" value="transferSuspense" />
+      <option name="METHOD_NAME" value="payDirectBill" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AddFamilyIT.addBank" />
-        <item itemvalue="JUnit.WholeLifeIT.transferSuspense" />
-        <item itemvalue="JUnit.WholeLifeIT.addRider" />
-        <item itemvalue="JUnit.UniversalLifeIT.addSuspense" />
         <item itemvalue="JUnit.UniversalLifeIT.addLoan" />
+        <item itemvalue="JUnit.WholeLifeIT.payDirectBill" />
+        <item itemvalue="JUnit.AddFamilyIT.addNewOwner" />
+        <item itemvalue="JUnit.AddFamilyIT.familyAddress" />
+        <item itemvalue="JUnit.AddFamilyIT.addFamily" />
       </list>
     </recent_temporary>
   </component>
