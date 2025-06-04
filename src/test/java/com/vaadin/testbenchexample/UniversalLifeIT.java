@@ -21,9 +21,9 @@ public class UniversalLifeIT extends BaseLoginTest {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "01N1191217" );
+		getPolicy.searchByPolicy().sendKeys( "01N1112006" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "01N1191217" ).click();
+		getPolicy.family().getCell( "01N1112006" ).click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
 		addSuspense.suspense().click();
 		ScenarioView addSuspenseButton = $( ScenarioView.class ).first();
