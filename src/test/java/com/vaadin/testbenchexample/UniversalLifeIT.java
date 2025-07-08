@@ -20,6 +20,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 	public void addSuspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "01N1112006" );
 		getPolicy.searchButton().click();
@@ -77,6 +78,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 	public void addLoan() throws InterruptedException, IOException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "01N1191217" );
 		getPolicy.searchButton().click();

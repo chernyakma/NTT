@@ -31,6 +31,7 @@ public class WholeLifeIT extends BaseLoginTest {
 	public void transferSuspense() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "05W1001538" );
 		getPolicy.searchButton().click();
@@ -87,6 +88,7 @@ public class WholeLifeIT extends BaseLoginTest {
 	public void addLoan() throws InterruptedException, IOException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "05W1E00518" );
 		getPolicy.searchButton().click();
@@ -133,6 +135,7 @@ public class WholeLifeIT extends BaseLoginTest {
 
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys("05W1E00518" );
 		getPolicy.searchButton().click();
@@ -205,6 +208,7 @@ public class WholeLifeIT extends BaseLoginTest {
 	public void payDirectBill() {
 		VaadinSelectView getSelectButton = $(VaadinSelectView.class).first();
 		getSelectButton.getSelectItem().selectByText("Search Policy");
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $(SearchComponentView.class).first();
 		getPolicy.searchByPolicy().sendKeys("05W1055443");
 		getPolicy.searchButton().click();
@@ -251,7 +255,7 @@ public class WholeLifeIT extends BaseLoginTest {
 
 		VaadinSelectView getSelectButton = $(VaadinSelectView.class).first();
 		getSelectButton.getSelectItem().selectByText("Search Policy");
-
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $(SearchComponentView.class).first();
 		getPolicy.searchByPolicy().sendKeys("06W1082879");
 		getPolicy.searchButton().click();
