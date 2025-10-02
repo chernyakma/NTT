@@ -61,7 +61,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		transferSuspence.toAccount().selectByText( "POLICY SUSPENSE" );
 		transferSuspence.transferAmount().sendKeys( "100000" );
 		Assertions.assertEquals( "100000",transferSuspence.transferAmount().getValue() );
-		transferSuspence.transferEffectveDate().setDate( LocalDate.now() );
+//		transferSuspence.transferEffectveDate().setDate( LocalDate.now() );
 		transferSuspence.note().sendKeys( "transfer" );
 		transferSuspence.okButton().click();
 		ScenarioView suspenceAmount=$(ScenarioView.class).first();
@@ -71,12 +71,14 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseSecondTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
+
 		ok.getSaveButton().click();
 		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
 		ScenarioView removeTransaction = $(ScenarioView.class).first();
 		removeTransaction.deleteFirstTransactionButton().click();
 		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
 		confirmation.getSaveButton().click();
+
 		ScenarioView removeSecondTransaction = $(ScenarioView.class).first();
 		removeSecondTransaction.deleteFirstTransactionButton().click();
 		VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
