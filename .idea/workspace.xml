@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/WholeLifeIT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WholeLifeIT.transferSuspense">
+  <component name="RunManager" selected="JUnit.WholeLifeIT.payDirectBill">
     <configuration name="AddFamilyIT.addBank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -98,6 +97,22 @@
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
       <option name="METHOD_NAME" value="addBank" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddFamilyIT.addNewOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addNewOwner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,28 +166,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WholeLifeIT.transferSuspense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.WholeLifeIT" />
-      <option name="METHOD_NAME" value="transferSuspense" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WholeLifeIT.transferSuspense" />
         <item itemvalue="JUnit.WholeLifeIT.payDirectBill" />
-        <item itemvalue="JUnit.AddFamilyIT.editAddress" />
         <item itemvalue="JUnit.AddFamilyIT.familyAddress" />
+        <item itemvalue="JUnit.AddFamilyIT.editAddress" />
+        <item itemvalue="JUnit.AddFamilyIT.addNewOwner" />
         <item itemvalue="JUnit.AddFamilyIT.addBank" />
       </list>
     </recent_temporary>
