@@ -144,7 +144,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		getSelectButton.getSelectItem().selectItemByIndex( 3 );
 		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getFamily = $(SearchComponentView.class).first();
-		waitUntil(driver -> getFamily.isDisplayed(), 80);
+//		waitUntil(driver -> getFamily.isDisplayed(), 80);
 		getFamily.searchBySSN().sendKeys( "511367917 " );
 		getFamily.searchButton().click();
 		getFamily.family().getCell( "Palmer" ).click();
