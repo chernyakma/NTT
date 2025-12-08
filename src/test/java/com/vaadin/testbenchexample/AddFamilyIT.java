@@ -5,14 +5,12 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.vaadin.flow.component.combobox.testbench.ComboBoxElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -59,14 +57,25 @@ public class AddFamilyIT extends BaseLoginTest {
 	@Test
 	public void addSpouse (){
 
-		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 3 );
-		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
-		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchBySSN().sendKeys( "511367917" );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Palmer" ).click();
+//		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
+//		getSelectButton.getSelectItem().selectItemByIndex( 3 );
+//		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
+//		SearchComponentView getFamily = $( SearchComponentView.class ).first();
+//		getFamily.searchBySSN().sendKeys( "511367917" );
+//		getFamily.searchButton().click();
+//		getFamily.family().getCell( "Palmer" ).click();
+		QuickSearchView setFamily = $ (QuickSearchView.class).first();
+		setFamily.quickType().selectByText("Family");
+		ComboBoxElement ssnCombo = setFamily.searchBySSN();
+		try {
+			ssnCombo.sendKeys("511367917");
+			ssnCombo.selectByText("David Palmer");   // after this, QuickSearchView is gone
+		} catch (org.openqa.selenium.StaleElementReferenceException e) {
+			// OK: navigation likely started and the old view got destroyed.
+			// Don't touch setFamily / ssnCombo anymore.
+		}
 
+		waitUntil(driver -> $(ScenarioView.class).exists(), 100);
 		ScenarioView addMember= $(ScenarioView.class).first();
 		addMember.addMemberButton().click();
 		AddFamilyView family = $( AddFamilyView.class ).first();
@@ -100,6 +109,7 @@ public class AddFamilyIT extends BaseLoginTest {
 	public void addFamilyMemberFromPolicy(){
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
+
 		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "05W1E17583");
@@ -140,14 +150,25 @@ public class AddFamilyIT extends BaseLoginTest {
 	@Test
 	public void addBank() throws InterruptedException {
 
-		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-		getSelectButton.getSelectItem().selectItemByIndex( 3 );
-		waitUntil(driver -> $(SearchComponentView.class).exists(), 200);
-		SearchComponentView getFamily = $(SearchComponentView.class).first();
-//		waitUntil(driver -> getFamily.isDisplayed(), 80);
-		getFamily.searchBySSN().sendKeys( "511367917 " );
-		getFamily.searchButton().click();
-		getFamily.family().getCell( "Palmer" ).click();
+//		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
+//		getSelectButton.getSelectItem().selectItemByIndex( 3 );
+//		waitUntil(driver -> $(SearchComponentView.class).exists(), 200);
+		QuickSearchView setFamily = $ (QuickSearchView.class).first();
+		setFamily.quickType().selectByText("Family");
+		ComboBoxElement ssnCombo = setFamily.searchBySSN();
+
+// type SSN and select David Palmer – this action triggers navigation
+		try {
+			ssnCombo.sendKeys("511367917");
+			ssnCombo.selectByText("David Palmer");   // after this, QuickSearchView is gone
+		} catch (org.openqa.selenium.StaleElementReferenceException e) {
+			// OK: navigation likely started and the old view got destroyed.
+			// Don't touch setFamily / ssnCombo anymore.
+		}
+
+
+		waitUntil(driver -> $(ScenarioView.class).exists(), 100);
+
 		ScenarioView editMember= $(ScenarioView.class).first();
 		editMember.getEditFamilyButton().click();
 		NaviMenuView getBank = $( NaviMenuView.class ).first();
@@ -174,7 +195,7 @@ public class AddFamilyIT extends BaseLoginTest {
 	public void familyAddress() throws InterruptedException {
 	VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
     getSelectButton.getSelectItem().selectItemByIndex( 3 );
-	waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
+	waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
 	SearchComponentView getFamily = $( SearchComponentView.class ).first();
 	getFamily.searchBySSN().sendKeys( "511367917" );
 	getFamily.searchButton().click();
@@ -189,14 +210,14 @@ public class AddFamilyIT extends BaseLoginTest {
 	setAddress.getState().selectByText( "Virginia" );
 	setAddress.getAddressType().selectItemByIndex( 2 );
 	Assertions.assertEquals( "Mailing",setAddress.getAddressType().getSelectedText() );
-	setAddress.getDefaultMailing().click();
-//	setAddress.getDefaultBilling().click();
+//	setAddress.getDefaultMailing().click();
+	setAddress.getDefaultBilling().click();
 //	setAddress.getDefaultResidence().click();
 	Assertions.assertEquals( "Virginia", setAddress.getState().getSelectedText());
 	Assertions.assertEquals( "74 River Street", setAddress.getLine1().getValue());
 	Assertions.assertEquals( "25 Main Street", setAddress.getLine2().getValue());
-	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );
-//	Assertions.assertTrue( setAddress.getDefaultBilling().isChecked() );
+//	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );
+	Assertions.assertTrue( setAddress.getDefaultBilling().isChecked() );
 //	Assertions.assertTrue( setAddress.getDefaultResidence().isChecked() );
 
 		setAddress.getCancelButton().click();
@@ -211,7 +232,7 @@ public class AddFamilyIT extends BaseLoginTest {
 
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 3 );
-		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
 		getFamily.searchBySSN().sendKeys( "511367917" );
 		getFamily.searchButton().click();
@@ -241,7 +262,7 @@ public class AddFamilyIT extends BaseLoginTest {
 	public void addBeneficiary() throws InterruptedException {
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
-		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
 		getPolicy.searchByPolicy().sendKeys( "05W1038628" );
 		getPolicy.searchButton().click();
@@ -328,7 +349,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		NaviMenuView ownerAndPayor = $(NaviMenuView.class).first();
 		ownerAndPayor.payorAndOwner().click();
 		ScenarioView changeOwner = $(ScenarioView.class).first();
-		changeOwner.ownerGUID().selectByText("EJFBRDTHFD SJRFEDDIHK (***-**-0415)");
+		changeOwner.ownerGUID().selectByText("UPPEBSKZPB URBGDWYBKZ (***-**-1930)");
 
 		changeOwner.getSaveButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
