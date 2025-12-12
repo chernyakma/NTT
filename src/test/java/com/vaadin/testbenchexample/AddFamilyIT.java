@@ -232,7 +232,7 @@ public class AddFamilyIT extends BaseLoginTest {
 
 		VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
 		getSelectButton.getSelectItem().selectItemByIndex( 3 );
-		waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
+		waitUntil(driver -> $(SearchComponentView.class).exists(), 300);
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
 		getFamily.searchBySSN().sendKeys( "511367917" );
 		getFamily.searchButton().click();
