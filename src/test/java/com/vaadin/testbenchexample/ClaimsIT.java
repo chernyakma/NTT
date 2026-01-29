@@ -163,6 +163,10 @@ public class ClaimsIT extends BaseLoginTest {
         createClaim.saveAndOpenButton().click();
         menu.processClaim().click();
         waitUntil(driver -> $(EntryDialogContent.class).exists(), 80);
+        waitUntil(d -> {
+        EntryDialogContent dlg = $(EntryDialogContent.class).first();
+            return dlg.isEnabled() && dlg.getEventType().isEnabled();
+        }, 80);
         EntryDialogContent event = $(EntryDialogContent.class).first();
         event.getEventType().selectByText("Decision");
         event.okButton().click();
