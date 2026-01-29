@@ -134,7 +134,7 @@ public class ClaimsIT extends BaseLoginTest {
         Assertions.assertEquals("Denied", claimStatus.claimStatus().getText());
 
     }
-    
+
  */
     @Test
     public void deathClaim() throws InterruptedException, IOException {
@@ -162,6 +162,7 @@ public class ClaimsIT extends BaseLoginTest {
         createClaim.getOwner().selectItemByIndex(0);
         createClaim.saveAndOpenButton().click();
         menu.processClaim().click();
+        waitUntil(driver -> $(EntryDialogContent.class).exists(), 80);
         EntryDialogContent event = $(EntryDialogContent.class).first();
         event.getEventType().selectByText("Decision");
         event.okButton().click();

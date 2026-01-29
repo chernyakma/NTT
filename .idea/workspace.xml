@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ClaimsIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ClaimsIT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,44 +60,60 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.AddFamilyIT.addBank.executor": "Run",
-    "JUnit.AddFamilyIT.addBeneficiary.executor": "Run",
-    "JUnit.AddFamilyIT.addFamily.executor": "Run",
-    "JUnit.AddFamilyIT.addFamilyMemberFromPolicy.executor": "Run",
-    "JUnit.AddFamilyIT.addNewOwner.executor": "Run",
-    "JUnit.AddFamilyIT.addOtherRoles.executor": "Run",
-    "JUnit.AddFamilyIT.addSpouse.executor": "Run",
-    "JUnit.AddFamilyIT.editAddress.executor": "Run",
-    "JUnit.AddFamilyIT.executor": "Run",
-    "JUnit.AddFamilyIT.familyAddress.executor": "Run",
-    "JUnit.ClaimsIT.addClaim.executor": "Run",
-    "JUnit.ClaimsIT.deathClaim.executor": "Run",
-    "JUnit.ClaimsIT.payClaim.executor": "Run",
-    "JUnit.ClaimsIT.processClaim.executor": "Run",
-    "JUnit.ClaimsIT.processDenyClaim.executor": "Run",
-    "JUnit.ClaimsIT.undoClaimPayment.executor": "Run",
-    "JUnit.UniversalLifeIT.addLoan.executor": "Run",
-    "JUnit.UniversalLifeIT.addSuspense.executor": "Run",
-    "JUnit.UniversalLifeIT.executor": "Run",
-    "JUnit.WholeLifeIT.addLoan.executor": "Run",
-    "JUnit.WholeLifeIT.addRider.executor": "Run",
-    "JUnit.WholeLifeIT.addSuspense.executor": "Run",
-    "JUnit.WholeLifeIT.executor": "Run",
-    "JUnit.WholeLifeIT.payDirectBill.executor": "Run",
-    "JUnit.WholeLifeIT.payEFT.executor": "Run",
-    "JUnit.WholeLifeIT.suspense.executor": "Run",
-    "JUnit.WholeLifeIT.transferSuspense.executor": "Run",
-    "JUnit.WholeLifeIT.verifyScreenshotFile.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MariiaCherniak/Documents/GitHub/Unum",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AddFamilyIT.addBank.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addBeneficiary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addFamily.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addFamilyMemberFromPolicy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addNewOwner.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addOtherRoles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.addSpouse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.editAddress.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddFamilyIT.familyAddress.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClaimsIT.addClaim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClaimsIT.deathClaim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClaimsIT.payClaim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClaimsIT.processClaim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClaimsIT.processDenyClaim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClaimsIT.undoClaimPayment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UniversalLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UniversalLifeIT.addSuspense.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UniversalLifeIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.addLoan.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.addRider.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.addSuspense.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.payDirectBill.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.payEFT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.suspense.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.transferSuspense.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WholeLifeIT.verifyScreenshotFile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MariiaCherniak/Documents/GitHub/Unum&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.ClaimsIT.deathClaim">
+    <configuration name="AddFamilyIT.addFamily" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addFamily" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClaimsIT.deathClaim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -124,22 +141,6 @@
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.ClaimsIT" />
       <option name="METHOD_NAME" value="payClaim" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClaimsIT.processClaim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.ClaimsIT" />
-      <option name="METHOD_NAME" value="processClaim" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,10 +181,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ClaimsIT.deathClaim" />
+        <item itemvalue="JUnit.AddFamilyIT.addFamily" />
         <item itemvalue="JUnit.ClaimsIT.payClaim" />
         <item itemvalue="JUnit.ClaimsIT.processDenyClaim" />
         <item itemvalue="JUnit.ClaimsIT.undoClaimPayment" />
-        <item itemvalue="JUnit.ClaimsIT.processClaim" />
       </list>
     </recent_temporary>
   </component>
