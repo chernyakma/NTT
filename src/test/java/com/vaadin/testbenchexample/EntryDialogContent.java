@@ -1,5 +1,6 @@
 package com.vaadin.testbenchexample;
 import com.vaadin.flow.component.checkbox.testbench.CheckboxElement;
+import com.vaadin.flow.component.html.testbench.InputTextElement;
 import com.vaadin.flow.component.listbox.testbench.ListBoxElement;
 import com.vaadin.flow.component.radiobutton.testbench.RadioButtonGroupElement;
 import org.openqa.selenium.By;
@@ -26,6 +27,9 @@ public class EntryDialogContent extends TestBenchElement {
 	}
 	protected ButtonElement closeButton (){
 		return $(ButtonElement.class).last();}
+	protected ButtonElement saveAndOpenButton (){
+		return $(ButtonElement.class).get(1);
+	}
 
 	protected ButtonElement processButton (){
 		return $(ButtonElement.class).first();}
@@ -240,6 +244,62 @@ public class EntryDialogContent extends TestBenchElement {
 	protected RadioButtonGroupElement defaultAddress (){
 		return $(TestBenchElement.class).id("FldSec_1" ).$(RadioButtonGroupElement.class).first();
 	}
+	//Claims
+	protected InputTextElement getClaimNumber() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( TextFieldElement.class ).id( "ClaimNumber" ).$(InputTextElement.class).first();
+	}
+
+	protected SelectElement getClaimType() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id( "Type");
+	}
+	protected DatePickerElement getIncurredDate() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( DatePickerElement.class ).id( "IncurredDate");
+	}
+	protected DatePickerElement getReceivedDate() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( DatePickerElement.class ).id( "ReceivedDate");
+	}
+	protected SelectElement getClaimCause() {
+
+		return $( TestBenchElement.class ).id( "S1").$( SelectElement.class ).id( "CauseType");
+	}
+	protected SelectElement getContact() {
+
+		return $( TestBenchElement.class ).id( "S3").$( SelectElement.class ).id( "ContactClientID");
+	}
+	protected SelectElement getOwner() {
+
+		return $( TestBenchElement.class ).id( "S2").$( SelectElement.class ).id( "OwnerEmployeeGUID");
+	}
+	protected SelectElement getSource() {
+
+		return $( TestBenchElement.class ).id( "S2").$( SelectElement.class ).id( "NotificationSource");
+	}
+
+	protected SelectElement getEventType() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id( "Type");
+	}
+	protected SelectElement getPayee() {
+
+		return $( TestBenchElement.class ).id( "S1").$( SelectElement.class ).id( "PayeeGUID");
+	}
+	protected ButtonElement editDecision (){
+
+		return $( TestBenchElement.class ).id( "S1").$( TestBenchElement.class ).id( "PaymentLinesTable").$(ButtonElement.class).get(1);
+	}
+	protected SelectElement getClaimDecision() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id( "Decision");
+	}
+	protected SelectElement getDenialClaimReason() {
+
+		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id("DenialReason");
+	}
+
 
 
 	public void addBeneficiary (String firstName,String lastName,String ssn,String email,String phoneNumber){

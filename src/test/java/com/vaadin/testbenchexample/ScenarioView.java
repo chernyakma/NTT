@@ -226,6 +226,27 @@ public class ScenarioView extends TestBenchElement {
 	protected SelectElement ownerGUID(){
 		return $(TestBenchElement.class).id("viewContent").$( "scenario-component" ).first().$( TestBenchElement.class ).id( "fieldLayout" ).$( "saveable-page" ).first().$( TestBenchElement.class ).id( "OwnerSection" ).$(SelectElement.class).id("OwnerGUID");
 	}
+	//claims
+	protected ButtonElement getAddClaimsButton() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("claim-page").first().$( TestBenchElement.class ).id( "pageContent" ).$( "search-component" ).first().$(TestBenchElement.class).id("tools").$(ButtonElement.class).first();
+
+	}
+	protected GridElement getClaim() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("fieldLayout").$("claim-page").first().$( TestBenchElement.class ).id( "pageContent" ).$( "search-component" ).first().$(GridElement.class).first();
+
+	}
+	protected WebElement claimStatus() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("titleLayout").$(TestBenchElement.class).id("summaryTable").$(TestBenchElement.class).id("componentContent").findElements(By.className("summary-column-value")).get(5);
+	}
+	protected WebElement policyClaimStatus() {
+
+		return $(TestBenchElement.class).id("viewContent").$("scenario-component").first().$(TestBenchElement.class).id("titleLayout").$(TestBenchElement.class).id("summaryTable").$(TestBenchElement.class).id("componentContent").findElements(By.className("summary-column-value")).get(2);
+	}
+
+
 }
 
 

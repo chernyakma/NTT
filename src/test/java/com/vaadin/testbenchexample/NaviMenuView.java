@@ -47,6 +47,11 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).last();
 	}
+	protected TestBenchElement claims() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$(IconElement.class).get( 40 );
+	}
+
 
 
 	// Policy
@@ -118,4 +123,21 @@ public class NaviMenuView extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "navi-menu" ).$( IconElement.class ).get( 26 );
 	}
+	protected TestBenchElement processClaim() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$(IconElement.class).get( 24 );
+	}
+	protected TestBenchElement makePayment() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$(IconElement.class).get( 29 );
+	}
+	protected TestBenchElement policy() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$(IconElement.class).get( 21 );
+	}
+	protected TestBenchElement claimPolicy() {
+
+		return $( TestBenchElement.class ).id( "navi-menu" ).$(IconElement.class).get( 42 );
+	}
+
 }
