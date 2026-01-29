@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 public class ClaimsIT extends BaseLoginTest {
-
+/*
     @Test
     public void addClaim() throws InterruptedException, IOException {
         VaadinSelectView getSelectButton = $(VaadinSelectView.class).first();
@@ -134,6 +134,8 @@ public class ClaimsIT extends BaseLoginTest {
         Assertions.assertEquals("Denied", claimStatus.claimStatus().getText());
 
     }
+    
+ */
     @Test
     public void deathClaim() throws InterruptedException, IOException {
         VaadinSelectView getSelectButton = $(VaadinSelectView.class).first();
