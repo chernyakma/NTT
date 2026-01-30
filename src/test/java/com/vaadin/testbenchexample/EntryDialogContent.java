@@ -283,9 +283,15 @@ public class EntryDialogContent extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id( "Type");
 	}
+	protected SelectElement getEventType1() {
+		return this.$(TestBenchElement.class).id("S0")
+				.$(TestBenchElement.class).id("section")
+				.$(SelectElement.class).id("Type");
+	}
+
 	protected SelectElement getPayee() {
 
-		return $( TestBenchElement.class ).id( "S1").$( SelectElement.class ).id( "PayeeGUID");
+		return this.$( TestBenchElement.class ).id( "S1").$( SelectElement.class ).id( "PayeeGUID");
 	}
 	protected ButtonElement editDecision (){
 
