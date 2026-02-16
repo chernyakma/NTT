@@ -349,7 +349,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		NaviMenuView ownerAndPayor = $(NaviMenuView.class).first();
 		ownerAndPayor.payorAndOwner().click();
 		ScenarioView changeOwner = $(ScenarioView.class).first();
-		changeOwner.ownerGUID().selectByText("RRKXHSQEYE PFFJHITWZI (***-**-4550)");
+		changeOwner.ownerGUID().selectByText("RRKXHSQEYE PFFJHITWZI (072124550)");
 
 		changeOwner.getSaveButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();

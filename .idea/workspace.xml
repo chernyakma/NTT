@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4a665f64-38c0-44a5-b98d-7e0327b9d432" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/AddFamilyIT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/BaseLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ClaimsIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/ClaimsIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/EntryDialogContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vaadin/testbenchexample/EntryDialogContent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,23 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ClaimsIT.deathClaim">
+  <component name="RunManager" selected="JUnit.AddFamilyIT.addNewOwner">
+    <configuration name="AddFamilyIT.addBeneficiary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addBeneficiary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AddFamilyIT.addFamily" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NTT" />
       <extension name="coverage">
@@ -111,6 +126,22 @@
       <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
       <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
       <option name="METHOD_NAME" value="addFamily" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddFamilyIT.addNewOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NTT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.AddFamilyIT" />
+      <option name="METHOD_NAME" value="addNewOwner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,45 +179,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClaimsIT.processDenyClaim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.ClaimsIT" />
-      <option name="METHOD_NAME" value="processDenyClaim" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClaimsIT.undoClaimPayment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NTT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vaadin.testbenchexample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vaadin.testbenchexample" />
-      <option name="MAIN_CLASS_NAME" value="com.vaadin.testbenchexample.ClaimsIT" />
-      <option name="METHOD_NAME" value="undoClaimPayment" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AddFamilyIT.addNewOwner" />
+        <item itemvalue="JUnit.AddFamilyIT.addBeneficiary" />
         <item itemvalue="JUnit.ClaimsIT.deathClaim" />
         <item itemvalue="JUnit.AddFamilyIT.addFamily" />
         <item itemvalue="JUnit.ClaimsIT.payClaim" />
-        <item itemvalue="JUnit.ClaimsIT.processDenyClaim" />
-        <item itemvalue="JUnit.ClaimsIT.undoClaimPayment" />
       </list>
     </recent_temporary>
   </component>
