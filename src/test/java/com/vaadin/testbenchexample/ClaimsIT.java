@@ -195,9 +195,11 @@ public class ClaimsIT extends BaseLoginTest {
                 menu.policyTransactions().click();
                 ScenarioView transactions = $(ScenarioView.class).first();
                 transactions.reverseSecondTransactionButton().click();
+
                 waitUntil(driver -> $(VaadinConfirmDialogView.class).exists(), 120);
                 VaadinConfirmDialogView confirm = $(VaadinConfirmDialogView.class).first();
-                confirm.getSaveButton().click();
+                confirm.getDeleteButton().click();
+
                 waitUntil(driver -> !transactions.progressBar().isDisplayed(), 80);
                 transactions.deleteFirstTransactionButton().click();
                 waitUntil(driver -> $(VaadinConfirmDialogView.class).exists(), 120);
