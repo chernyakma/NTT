@@ -70,9 +70,10 @@ public class WholeLifeIT extends BaseLoginTest {
 		transactions.transactions().click();
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseSecondTransactionButton().click();
+
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
 
-		ok.getSaveButton().click();
+		ok.getDeleteButton().click();
 		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
 		ScenarioView removeTransaction = $(ScenarioView.class).first();
 		removeTransaction.deleteFirstTransactionButton().click();
@@ -122,7 +123,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseLoanTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
-		ok.getSaveButton().click();
+		ok.getDeleteButton().click();
 		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
 		ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
 		deleteLoanTransaction.deleteLoanTransactionButton().click();
@@ -195,7 +196,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseAddRiderTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
-		ok.getSaveButton().click();
+		ok.getDeleteButton().click();
 		ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
 		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
 
@@ -242,7 +243,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
 		deleteTransaction.reverseAddRiderTransactionButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
-		ok.getSaveButton().click();
+		ok.getDeleteButton().click();
 		ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
 		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
 

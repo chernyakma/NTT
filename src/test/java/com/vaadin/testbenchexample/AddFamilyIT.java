@@ -309,6 +309,26 @@ public class AddFamilyIT extends BaseLoginTest {
 		deleteBeneficiary.getDeleteFamilyBeneButton().click();
 		VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
 		delete.getSaveButton().click();
+		deleteBeneficiary.policyNumber().getCell("05W1038628").click();
+		NaviMenuView transactions = $(NaviMenuView.class).first();
+		transactions.transactions().click();
+		ScenarioView deleteTransaction = $(ScenarioView.class).first();
+		deleteTransaction.reverseSecondTransactionButton().click();
+
+		VaadinConfirmDialogView ok2 = $(VaadinConfirmDialogView.class).first();
+
+		ok2.getDeleteButton().click();
+		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
+		ScenarioView removeTransaction = $(ScenarioView.class).first();
+		removeTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
+		confirmation.getSaveButton().click();
+
+		ScenarioView removeSecondTransaction = $(ScenarioView.class).first();
+		removeSecondTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView ok3 = $(VaadinConfirmDialogView.class).first();
+		ok3.getSaveButton().click();
+
 
 
 	}
@@ -360,6 +380,27 @@ public class AddFamilyIT extends BaseLoginTest {
 		deleteOwner.getDeleteFamilyOwner().click();
 		VaadinConfirmDialogView delete = $(VaadinConfirmDialogView.class).first();
 		delete.getSaveButton().click();
+
+		deleteOwner.policyNumber().getCell("06W1072965").click();
+		NaviMenuView transactions = $(NaviMenuView.class).first();
+		transactions.transactions().click();
+		ScenarioView deleteTransaction = $(ScenarioView.class).first();
+		deleteTransaction.reverseSecondTransactionButton().click();
+
+		VaadinConfirmDialogView ok2 = $(VaadinConfirmDialogView.class).first();
+
+		ok2.getDeleteButton().click();
+		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
+		ScenarioView removeTransaction = $(ScenarioView.class).first();
+		removeTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
+		confirmation.getSaveButton().click();
+
+		ScenarioView removeSecondTransaction = $(ScenarioView.class).first();
+		removeSecondTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView ok3 = $(VaadinConfirmDialogView.class).first();
+		ok3.getSaveButton().click();
+
 
 	}
 
@@ -431,6 +472,32 @@ public class AddFamilyIT extends BaseLoginTest {
 		ScenarioView addresses = $(ScenarioView.class).first();
 		addresses.getDeleteAddressButton().click();
 		addresses.getSaveButton().click();
+		NaviMenuView family2 = $(NaviMenuView.class).first();
+		family2.getPolicy().click();
+//		addresses.family().click();
+		ScenarioView policy = $(ScenarioView.class).first();
+
+		policy.policyNumber().getCell("06W1050814").click();
+		NaviMenuView transactions = $(NaviMenuView.class).first();
+		transactions.transactions().click();
+		ScenarioView deleteTransaction = $(ScenarioView.class).first();
+		deleteTransaction.reverseSecondTransactionButton().click();
+
+		VaadinConfirmDialogView ok2 = $(VaadinConfirmDialogView.class).first();
+
+		ok2.getDeleteButton().click();
+		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
+		ScenarioView removeTransaction = $(ScenarioView.class).first();
+		removeTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView confirmation = $(VaadinConfirmDialogView.class).first();
+		confirmation.getSaveButton().click();
+
+		ScenarioView removeSecondTransaction = $(ScenarioView.class).first();
+		removeSecondTransaction.deleteFirstTransactionButton().click();
+		VaadinConfirmDialogView ok3 = $(VaadinConfirmDialogView.class).first();
+		ok3.getSaveButton().click();
+
+
 	}
 
 
