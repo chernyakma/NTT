@@ -293,6 +293,10 @@ public class EntryDialogContent extends TestBenchElement {
 
 		return this.$( TestBenchElement.class ).id( "S1").$( SelectElement.class ).id( "PayeeGUID");
 	}
+	protected DatePickerElement paymentDate() {
+
+		return this.$( TestBenchElement.class ).id( "S1").$( DatePickerElement.class ).id( "EventDate");
+	}
 	protected ButtonElement editDecision (){
 
 		return $( TestBenchElement.class ).id( "S1").$( TestBenchElement.class ).id( "PaymentLinesTable").$(ButtonElement.class).get(1);

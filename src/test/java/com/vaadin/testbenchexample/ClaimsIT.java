@@ -190,6 +190,7 @@ public class ClaimsIT extends BaseLoginTest {
                 waitUntil(driver -> $(EntryDialogContent.class).exists(), 80);
                 EntryDialogContent payment = $(EntryDialogContent.class).last();
                 payment.getPayee().selectItemByIndex(0);
+                payment.paymentDate().setDate(LocalDate.now());
                 payment.okButton().click();
                 menu.claimPolicy().click();
                 menu.policyTransactions().click();

@@ -68,7 +68,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		setFamily.quickType().selectByText("Family");
 		ComboBoxElement ssnCombo = setFamily.searchBySSN();
 		try {
-			ssnCombo.sendKeys("511367917");
+			ssnCombo.sendKeys("511367918");
 			ssnCombo.selectByText("David Palmer");   // after this, QuickSearchView is gone
 		} catch (org.openqa.selenium.StaleElementReferenceException e) {
 			// OK: navigation likely started and the old view got destroyed.
@@ -159,7 +159,7 @@ public class AddFamilyIT extends BaseLoginTest {
 
 // type SSN and select David Palmer – this action triggers navigation
 		try {
-			ssnCombo.sendKeys("511367917");
+			ssnCombo.sendKeys("511367918");
 			ssnCombo.selectByText("David Palmer");   // after this, QuickSearchView is gone
 		} catch (org.openqa.selenium.StaleElementReferenceException e) {
 			// OK: navigation likely started and the old view got destroyed.
@@ -197,7 +197,7 @@ public class AddFamilyIT extends BaseLoginTest {
     getSelectButton.getSelectItem().selectItemByIndex( 3 );
 	waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
 	SearchComponentView getFamily = $( SearchComponentView.class ).first();
-	getFamily.searchBySSN().sendKeys( "511367917" );
+	getFamily.searchBySSN().sendKeys( "511367918" );
 	getFamily.searchButton().click();
 	getFamily.family().getCell( "Palmer" ).click();
 	NaviMenuView getAddress = $(NaviMenuView.class).first();
@@ -210,14 +210,14 @@ public class AddFamilyIT extends BaseLoginTest {
 	setAddress.getState().selectByText( "Virginia" );
 	setAddress.getAddressType().selectItemByIndex( 2 );
 	Assertions.assertEquals( "Mailing",setAddress.getAddressType().getSelectedText() );
-	setAddress.getDefaultMailing().click();
-//	setAddress.getDefaultBilling().click();
+//	setAddress.getDefaultMailing().click();
+	setAddress.getDefaultBilling().click();
 //	setAddress.getDefaultResidence().click();
 	Assertions.assertEquals( "Virginia", setAddress.getState().getSelectedText());
 	Assertions.assertEquals( "74 River Street", setAddress.getLine1().getValue());
 	Assertions.assertEquals( "25 Main Street", setAddress.getLine2().getValue());
-	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );
-//	Assertions.assertTrue( setAddress.getDefaultBilling().isChecked() );
+//	Assertions.assertTrue( setAddress.getDefaultMailing().isChecked() );
+	Assertions.assertTrue( setAddress.getDefaultBilling().isChecked() );
 //	Assertions.assertTrue( setAddress.getDefaultResidence().isChecked() );
 
 		setAddress.getCancelButton().click();
@@ -234,7 +234,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		getSelectButton.getSelectItem().selectItemByIndex( 3 );
 		waitUntil(driver -> $(SearchComponentView.class).exists(), 300);
 		SearchComponentView getFamily = $( SearchComponentView.class ).first();
-		getFamily.searchBySSN().sendKeys( "511367917" );
+		getFamily.searchBySSN().sendKeys( "511367918" );
 		getFamily.searchButton().click();
 		getFamily.family().getCell( "Palmer" ).click();
 		NaviMenuView getAddress = $( NaviMenuView.class ).first();
@@ -369,7 +369,7 @@ public class AddFamilyIT extends BaseLoginTest {
 		NaviMenuView ownerAndPayor = $(NaviMenuView.class).first();
 		ownerAndPayor.payorAndOwner().click();
 		ScenarioView changeOwner = $(ScenarioView.class).first();
-		changeOwner.ownerGUID().selectByText("RRKXHSQEYE PFFJHITWZI (072124550)");
+		changeOwner.ownerGUID().selectByText("OUEPJDPOBN OEDDGWOEFN (735656789)");
 
 		changeOwner.getSaveButton().click();
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();

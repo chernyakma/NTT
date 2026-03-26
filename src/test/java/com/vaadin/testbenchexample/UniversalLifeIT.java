@@ -119,7 +119,7 @@ public class UniversalLifeIT extends BaseLoginTest {
 		deleteTransaction.reverseLoanTransactionButton().click();
 		Thread.sleep( 5_000 );
 		VaadinConfirmDialogView ok = $(VaadinConfirmDialogView.class).first();
-		ok.getSaveButton().click();
+		ok.getDeleteButton().click();
 		waitUntil(driver -> !deleteTransaction.progressBar().isDisplayed(), 80);
         ScenarioView deleteLoanTransaction = $(ScenarioView.class).first();
 		deleteLoanTransaction.deleteLoanTransactionButton().click();
