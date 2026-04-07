@@ -249,6 +249,10 @@ public class EntryDialogContent extends TestBenchElement {
 
 		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( TextFieldElement.class ).id( "ClaimNumber" ).$(InputTextElement.class).first();
 	}
+	protected SelectElement getTIClaimType() {
+
+		return $( TestBenchElement.class ).id( "S2").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id( "Type");
+	}
 
 	protected SelectElement getClaimType() {
 
@@ -282,6 +286,13 @@ public class EntryDialogContent extends TestBenchElement {
 	protected SelectElement getEventType() {
 
 		return $( TestBenchElement.class ).id( "S0").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id( "Type");
+	}
+	protected TextFieldElement discountRate(){
+		return $( TestBenchElement.class ).id( "S1").$( TestBenchElement.class ).id( "section" ).$(TextFieldElement.class).id("AcceleratedBenefitInterestRate");
+	}
+	protected SelectElement getSpecialHandling() {
+
+		return $( TestBenchElement.class ).id( "S1").$( TestBenchElement.class ).id( "section" ).$( SelectElement.class ).id("SpecialHandling");
 	}
 	protected SelectElement getEventType1() {
 		return this.$(TestBenchElement.class).id("S0")
