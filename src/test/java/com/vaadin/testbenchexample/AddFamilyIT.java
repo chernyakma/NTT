@@ -193,13 +193,27 @@ public class AddFamilyIT extends BaseLoginTest {
 	@Test
 
 	public void familyAddress() throws InterruptedException {
-	VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
-    getSelectButton.getSelectItem().selectItemByIndex( 3 );
-	waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
+//	VaadinSelectView getSelectButton = $( VaadinSelectView.class ).first();
+//    getSelectButton.getSelectItem().selectItemByIndex( 3 );
+//	waitUntil(driver -> $(SearchComponentView.class).exists(), 150);
+		QuickSearchView setFamily = $ (QuickSearchView.class).first();
+		setFamily.quickType().selectByText("Family");
+		ComboBoxElement ssnCombo = setFamily.searchBySSN();
+		try {
+			ssnCombo.sendKeys("511367918");
+			ssnCombo.selectByText("David Palmer");   // after this, QuickSearchView is gone
+		} catch (org.openqa.selenium.StaleElementReferenceException e) {
+			// OK: navigation likely started and the old view got destroyed.
+			// Don't touch setFamily / ssnCombo anymore.
+		}
+		waitUntil(driver -> $(ScenarioView.class).exists(), 100);
+/*
 	SearchComponentView getFamily = $( SearchComponentView.class ).first();
 	getFamily.searchBySSN().sendKeys( "511367918" );
 	getFamily.searchButton().click();
 	getFamily.family().getCell( "Palmer" ).click();
+	
+ */
 	NaviMenuView getAddress = $(NaviMenuView.class).first();
     getAddress.getAddresses().click();
 	ScenarioView addAddress = $(ScenarioView.class).first();
