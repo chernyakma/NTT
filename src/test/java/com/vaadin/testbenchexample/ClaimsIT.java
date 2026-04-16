@@ -297,15 +297,6 @@ public class ClaimsIT extends BaseLoginTest {
         menu.processTIClaim().click();
         EntryDialogContent change = $(EntryDialogContent.class).first();
         change.getEventType().selectByText("Denial");
-  /*
-        EntryDialogContent denyClaim = $(EntryDialogContent.class).first();
-        denyClaim.editDecision().click();
-        EntryDialogContent decision = $(EntryDialogContent.class).last();
-        decision.getClaimDecision().selectByText("Deny");
-        decision.okButton().click();
-        EntryDialogContent reason = $(EntryDialogContent.class).first();
-
-   */
         change.getDenialClaimReason().selectByText("Marked Up In Error");
         change.okButton().click();
         ScenarioView claimStatus = $(ScenarioView.class).first();

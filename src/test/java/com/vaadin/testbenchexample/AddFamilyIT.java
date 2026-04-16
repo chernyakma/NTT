@@ -212,7 +212,7 @@ public class AddFamilyIT extends BaseLoginTest {
 	getFamily.searchBySSN().sendKeys( "511367918" );
 	getFamily.searchButton().click();
 	getFamily.family().getCell( "Palmer" ).click();
-	
+
  */
 	NaviMenuView getAddress = $(NaviMenuView.class).first();
     getAddress.getAddresses().click();

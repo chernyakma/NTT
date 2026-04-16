@@ -33,9 +33,9 @@ public class WholeLifeIT extends BaseLoginTest {
 		getSelectButton.getSelectItem().selectItemByIndex( 4 );
 		waitUntil(driver -> $(SearchComponentView.class).exists(), 80);
 		SearchComponentView getPolicy = $( SearchComponentView.class ).first();
-		getPolicy.searchByPolicy().sendKeys( "05W1001538" );
+		getPolicy.searchByPolicy().sendKeys( "05W1E11755" );
 		getPolicy.searchButton().click();
-		getPolicy.family().getCell( "05W1001538" ).click();
+		getPolicy.family().getCell( "05W1E11755" ).click();
 		NaviMenuView addSuspense = $( NaviMenuView.class ).first();
 		addSuspense.suspense().click();
 		ScenarioView addSuspenseButton = $( ScenarioView.class ).first();
@@ -49,7 +49,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		suspenseSource.processButton().click();
 		Thread.sleep(3_000);
 		ScenarioView checkSuspence=$(ScenarioView.class).first();
-				Assertions.assertEquals( "$100,000.00",checkSuspence.suspenceBalance().getText() );
+				Assertions.assertEquals( "$100,096.16",checkSuspence.suspenceBalance().getText() );
 
 		checkSuspence.transferSuspenceButton().click();
 		EntryDialogContent transferSuspence = $(EntryDialogContent.class).first();
@@ -65,7 +65,7 @@ public class WholeLifeIT extends BaseLoginTest {
 		transferSuspence.note().sendKeys( "transfer" );
 		transferSuspence.okButton().click();
 		ScenarioView suspenceAmount=$(ScenarioView.class).first();
-		Assertions.assertEquals( "$0.00",suspenceAmount.suspenceBalance().getText() );
+		Assertions.assertEquals( "$96.16",suspenceAmount.suspenceBalance().getText() );
 		NaviMenuView transactions = $(NaviMenuView.class).first();
 		transactions.transactions().click();
 		ScenarioView deleteTransaction = $(ScenarioView.class).first();
